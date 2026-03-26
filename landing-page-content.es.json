@@ -1,0 +1,381 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "meta": {
+    "idioma": "es",
+    "tituloPagina": "AI PlayGrounds — Entiende la IA. Construye el Futuro.",
+    "descripcion": "Democratizando el conocimiento práctico de IA en Latinoamérica. Construye productos de IA reales, despliégalos y entiende lo que construyes."
+  },
+  "navegacion": {
+    "tipo": "navbar",
+    "marca": "AI PlayGrounds",
+    "enlaces": [
+      { "texto": "Programa", "ancla": "#program" },
+      { "texto": "Eventos", "ancla": "#events" },
+      { "texto": "Comunidad", "ancla": "#community" },
+      { "texto": "Trayectoria", "ancla": "#trajectory" }
+    ],
+    "alternarIdioma": { "etiqueta": "EN", "ruta": "/" },
+    "cta": { "texto": "Únete a la Lista", "ancla": "#waitlist" }
+  },
+  "secciones": [
+    {
+      "id": "hero",
+      "tipoSeccion": "hero",
+      "orden": 1,
+      "descripcionTipo": "Cabecera principal con badge, titular en dos líneas, subtítulo con énfasis, dos botones CTA, bloque de código de ejemplo (mockup de terminal) y pasarela infinita de nombres de aliados (marquee de texto, no carrusel de imágenes).",
+      "contenido": {
+        "badge": "Próxima cohorte: 2026",
+        "titularLinea1": "Entiende la IA.",
+        "titularLinea2": "Construye el Futuro.",
+        "subtitulo": "Democratizando el conocimiento práctico de IA en Latinoamérica. No te enseñamos a usar herramientas — te enseñamos a",
+        "subtituloEnfasis": "entender la tecnología",
+        "ctaPrincipal": { "texto": "Únete a la Lista", "ancla": "#waitlist" },
+        "ctaSecundario": { "texto": "Ver Programas", "ancla": "#program" },
+        "mockupCodigo": {
+          "tipo": "code_snippet",
+          "nombreArchivo": "ai-techproducts.py",
+          "comentarios": [
+            "# Usa la herramienta de IA que quieras",
+            "# Pero entiende lo que hizo",
+            "# ← Esto es lo que importa"
+          ]
+        },
+        "pasarelaLogos": {
+          "tipo": "marquee_texto",
+          "etiqueta": "Respaldados por líderes tech de LATAM",
+          "items": [
+            "Looper.ai",
+            "SpinOut",
+            "Globant",
+            "LetyMind",
+            "The Hackathon Company",
+            "Pymut",
+            "UPCH",
+            "Bioincuba",
+            "UTEC Ventures"
+          ]
+        }
+      }
+    },
+    {
+      "id": "problem",
+      "tipoSeccion": "problema_narrativo",
+      "orden": 2,
+      "descripcionTipo": "Sección de problema: encabezado, subtítulo con HTML permitido (énfasis), cuadrícula de pasos numerados con flechas en desktop, cita destacada y estadísticas con contador animado.",
+      "contenido": {
+        "etiqueta": "El problema del que nadie habla",
+        "tituloLinea1": "El Nuevo \"Tutorial Hell\"",
+        "tituloLinea2": "de la Era de la IA",
+        "subtituloHtml": "Las herramientas de IA generativa te permiten <em>producir</em> más rápido que nunca. Pero producir no es lo mismo que <strong>entender</strong>.",
+        "pasos": [
+          { "numero": "1", "titulo": "Usas herramientas de IA", "descripcion": "Claude Code, Cursor, Windsurf, Lovable..." },
+          { "numero": "2", "titulo": "Generas código", "descripcion": "La IA crea una solución funcional por ti" },
+          { "numero": "3", "titulo": "Haces deploy", "descripcion": "Tienes algo 'en producción'" },
+          { "numero": "4", "titulo": "Te preguntan cómo funciona", "descripcion": "...y no puedes explicarlo" },
+          { "numero": "5", "titulo": "Algo se rompe", "descripcion": "...y no sabes cómo arreglarlo" },
+          { "numero": "6", "titulo": "Sale una nueva herramienta", "descripcion": "...y tienes que empezar de cero" }
+        ],
+        "cita": "\"Tienes proyectos desplegados pero no conocimiento. Eres un operador de herramientas, no un constructor de soluciones.\"",
+        "estadisticas": [
+          { "valor": "73", "sufijo": "%", "etiqueta": "no puede explicar su propio código" },
+          { "valor": "68", "sufijo": "%", "etiqueta": "no puede debuggear sin IA" },
+          { "valor": "81", "sufijo": "%", "etiqueta": "depende de una sola herramienta" }
+        ]
+      }
+    },
+    {
+      "id": "program",
+      "tipoSeccion": "solucion_programa",
+      "orden": 3,
+      "descripcionTipo": "Programa (AI TechProducts): cita principal, tres pilares con icono, dos columnas (hitos del proyecto vs checklist de validación), bloque de métricas de estructura y CTA a lista de espera.",
+      "contenido": {
+        "etiqueta": "La Solución",
+        "titulo": "AI TechProducts",
+        "cita": "\"Si no puedes explicarlo, no lo construiste — solo lo generaste.\"",
+        "pilares": [
+          { "icono": "🔨", "titulo": "Construye productos reales", "descripcion": "Usa las herramientas que quieras — Claude Code, Cursor, Windsurf, no-code. Lo que importa es el resultado y que lo entiendas." },
+          { "icono": "🧠", "titulo": "Demuestra que entiendes", "descripcion": "Explica qué hizo la IA, por qué funciona y cómo lo modificarías sin empezar de cero." },
+          { "icono": "🚀", "titulo": "Despliega con usuarios reales", "descripcion": "Lanza a usuarios reales que te dan feedback. Itera basándote en uso real, no en hipótesis." }
+        ],
+        "tituloHitos": "Los 4 hitos de cada proyecto",
+        "hitos": [
+          { "numero": "01", "titulo": "Diseño y Arquitectura", "descripcion": "Planifica tu solución y define el enfoque técnico" },
+          { "numero": "02", "titulo": "Desarrollo 1.0", "descripcion": "Construye y despliega tu primera versión funcional" },
+          { "numero": "03", "titulo": "Iteración con Feedback", "descripcion": "Recoge feedback de usuarios reales e itera" },
+          { "numero": "04", "titulo": "Deploy y Pruebas de Usuario", "descripcion": "Despliegue final con aprendizajes documentados" }
+        ],
+        "tituloValidacion": "Cómo validamos el aprendizaje",
+        "preguntasValidacion": [
+          "¿Puedes explicar qué hace cada parte de tu código?",
+          "¿Puedes identificar dónde la IA aplicó ciertos conceptos?",
+          "¿Puedes modificar la solución sin pedirle a la IA que rehaga todo?",
+          "¿Puedes defender tu arquitectura y decisiones técnicas?"
+        ],
+        "metricasEstructura": [
+          { "valor": "3", "etiqueta": "meses por ciclo" },
+          { "valor": "3-4", "etiqueta": "semanas por sprint" },
+          { "valor": "3+", "etiqueta": "productos desplegados" },
+          { "valor": "1-2", "etiqueta": "personas por equipo" }
+        ],
+        "cta": { "texto": "Únete a la Lista de AI TechProducts", "ancla": "#waitlist" }
+      }
+    },
+    {
+      "id": "umbral",
+      "tipoSeccion": "producto_plataforma",
+      "orden": 4,
+      "descripcionTipo": "Dos columnas: texto (etiqueta, título, tagline, descripción HTML, lista de características) y mockup de interfaz tipo navegador con proyectos de ejemplo y métricas ficticias.",
+      "contenido": {
+        "etiqueta": "Plataforma",
+        "titulo": "Umbral",
+        "eslogan": "\"Desarrolla. Despliega. Aprende.\"",
+        "descripcionHtml": "Tu centro de control para construir un portafolio técnico real mientras aprendes los fundamentos de IA. Umbral es donde demuestras que no solo <em>generaste</em> — que <strong>construiste con entendimiento</strong>.",
+        "caracteristicas": [
+          { "icono": "🌐", "titulo": "Proyectos desplegados", "descripcion": "Rastrea proyectos con URLs en vivo y métricas reales de uso" },
+          { "icono": "📚", "titulo": "Fundamentos dominados", "descripcion": "Registro de conceptos que aplicaste y puedes explicar" },
+          { "icono": "🔄", "titulo": "Historial de iteraciones", "descripcion": "Cómo evolucionó tu proyecto basado en feedback real" },
+          { "icono": "📝", "titulo": "Documentación de aprendizaje", "descripcion": "Tus conclusiones técnicas de cada sprint" }
+        ],
+        "mockupUi": {
+          "tipo": "browser_chrome_mockup",
+          "urlBarra": "umbral.aiplaygrounds.com",
+          "cabeceraPortafolio": "Mi Portafolio",
+          "cohorte": "Cohorte 2026",
+          "etiquetaFundamentos": "Fundamentos dominados",
+          "proyecto1": {
+            "nombre": "Bot de Soporte con IA",
+            "estado": "En vivo",
+            "etiquetas": ["NLP", "RAG", "FastAPI"],
+            "porcentaje": "85"
+          },
+          "proyecto2": {
+            "nombre": "Analizador Inteligente de Docs",
+            "estado": "Iterando",
+            "etiquetas": ["Vision", "Embeddings"],
+            "porcentaje": "60"
+          },
+          "miniEstadisticas": {
+            "etiquetas": ["Desplegados", "Conceptos", "Usuarios"],
+            "nota": "En la UI actual los números 2, 12, 47 son fijos en el componente."
+          }
+        }
+      }
+    },
+    {
+      "id": "trajectory",
+      "tipoSeccion": "resultados_timeline",
+      "orden": 5,
+      "descripcionTipo": "Resultados: cuadrícula de estadísticas con contador y línea de tiempo vertical alternada (tarjetas de eventos con etiquetas), sin galería de imágenes.",
+      "contenido": {
+        "etiqueta": "Resultados",
+        "titulo": "Nuestra Trayectoria 2025",
+        "subtitulo": "En nuestro primer año, ya generamos impacto en toda Latinoamérica.",
+        "estadisticas": [
+          { "valor": "1000", "sufijo": "+", "etiqueta": "Inscritos al Hackathon" },
+          { "valor": "300", "sufijo": "+", "etiqueta": "Participantes del Bootcamp" },
+          { "valor": "16", "sufijo": "", "etiqueta": "Speakers Internacionales" },
+          { "valor": "40", "sufijo": "", "etiqueta": "Becas Completas" }
+        ],
+        "eventosTimeline": [
+          {
+            "titulo": "Bootcamp GenAI Fundamentals",
+            "descripcion": "Bootcamp nacional de fundamentos de IA Generativa. 300+ inscritos, 40 becas completas en Perú y Chile. 16 speakers internacionales.",
+            "etiquetas": ["Bootcamp", "Perú", "Chile"]
+          },
+          {
+            "titulo": "The Real AI",
+            "descripcion": "Evento para emprendedores: '¿Realmente necesitas IA en tus procesos?' Cortando el hype para identificar necesidades reales.",
+            "etiquetas": ["Emprendedores", "Estrategia"]
+          },
+          {
+            "titulo": "Colombia Tech Week",
+            "descripcion": "Participación en Tech Fest y Platzi Conf. Staff en el AI Hackathon Colombia. Networking con líderes tech de LATAM.",
+            "etiquetas": ["Colombia", "Networking"]
+          },
+          {
+            "titulo": "AI Hackathon Peru 2025",
+            "descripcion": "El hackathon de IA más grande del Perú. 1,000+ inscritos, 120 seleccionados. 24 horas construyendo. $1,500 USD en premios.",
+            "etiquetas": ["Principal", "Hackathon", "Perú"]
+          }
+        ]
+      }
+    },
+    {
+      "id": "events",
+      "tipoSeccion": "evento_destacado",
+      "orden": 6,
+      "descripcionTipo": "Bloque del hackathon principal: intro, estadísticas en cuadrícula, rejilla de jurados (tarjetas con iniciales, no fotos), nube de sponsors en texto y CTA externo.",
+      "contenido": {
+        "etiqueta": "Evento Principal",
+        "titulo": "AI Hackathon Peru 2025",
+        "subtitulo": "El mejor hackathon de IA realizado en el Perú",
+        "descripcion": "Reunimos al mejor talento de IA del país durante 24 horas de construcción sin parar, mentoría de CTOs internacionales y premios reales. Este fue el evento que demostró que la comunidad de IA en Perú está lista para competir a nivel global.",
+        "estadisticas": [
+          { "valor": "1,000+", "etiqueta": "Inscritos" },
+          { "valor": "120", "etiqueta": "Seleccionados" },
+          { "valor": "24h", "etiqueta": "Construyendo sin parar" },
+          { "valor": "$1,500", "etiqueta": "USD en premios" }
+        ],
+        "tituloJurado": "Jurado Internacional",
+        "jurado": [
+          { "nombre": "Adrian Mastronardi", "rol": "CTO of Habi", "pais": "Colombia" },
+          { "nombre": "Martin Pelaez", "rol": "CTO of Plenty", "pais": "Colombia" },
+          { "nombre": "Piero Sifuentes", "rol": "CTO of Hapi", "pais": "Peru" },
+          { "nombre": "Sebastian Ruiz", "rol": "Program Lead at UTEC Ventures", "pais": "Peru" },
+          { "nombre": "Gonzalo Aller", "rol": "Business Incubator Manager", "pais": "Peru" }
+        ],
+        "tituloSponsors": "Sponsors y Aliados",
+        "sponsors": [
+          "UPCH", "Bioincuba", "Yavendió!", "ElevenLabs", "Human", "Cursor",
+          "Lovable", "V0", "Repensar", "Valtec", "Nutriera", "Leasy",
+          "Finity", "CloudforgeAI", "Huawei", "Clerk", "Little Caesars"
+        ],
+        "cta": {
+          "texto": "Visita la Página del Hackathon",
+          "url": "https://www.peru.ai-hackathon.co/"
+        }
+      }
+    },
+    {
+      "id": "coming2026",
+      "tipoSeccion": "roadmap_proximos",
+      "orden": 7,
+      "descripcionTipo": "Cuadrícula de tarjetas de iniciativas futuras (icono + badge + título + descripción) y CTA secundario a lista de espera.",
+      "contenido": {
+        "etiqueta": "Próximamente",
+        "titulo": "Lo Que Viene en 2026",
+        "subtitulo": "Escalamos nuestra misión a toda Latinoamérica.",
+        "iniciativas": [
+          { "icono": "🌎", "titulo": "Hack@LATAM", "descripcion": "Hackathon regional con comunidades de toda Latinoamérica", "categoria": "Hackathon" },
+          { "icono": "📖", "titulo": "Bootcamps Fundamentales", "descripcion": "Fundamentos de IA, GenAI y Agentes — tracks de conocimiento profundo", "categoria": "Educación" },
+          { "icono": "✈️", "titulo": "DevDay LATAM", "descripcion": "Alianza con Pymut: 6 horas simultáneas en múltiples países. ¡Los ganadores viajan a Silicon Valley!", "categoria": "Silicon Valley" },
+          { "icono": "🤝", "titulo": "Fellowship de Impacto Regional", "descripcion": "Herramientas tech y conocimiento para todas las regiones del Perú", "categoria": "Fellowship" },
+          { "icono": "🏗️", "titulo": "Incubadoras PG", "descripcion": "Las mejores iniciativas de AI TechProducts conectadas con incubadoras y aceleradoras aliadas", "categoria": "Incubación" }
+        ],
+        "cta": { "texto": "Mantenerme Informado", "ancla": "#waitlist" }
+      }
+    },
+    {
+      "id": "community",
+      "tipoSeccion": "redes_sociales",
+      "orden": 8,
+      "descripcionTipo": "Encabezado y rejilla de enlaces a redes (icono SVG en código; aquí solo metadatos de texto en español).",
+      "contenido": {
+        "etiqueta": "Únete",
+        "titulo": "Sé Parte de la Comunidad",
+        "subtitulo": "Síguenos para enterarte de eventos, bootcamps y oportunidades en el ecosistema de IA en LATAM.",
+        "redes": [
+          { "nombre": "LinkedIn", "descripcionCorta": "Actualizaciones profesionales y networking" },
+          { "nombre": "Instagram", "descripcionCorta": "Detrás de escena y comunidad visual" },
+          { "nombre": "Twitter / X", "descripcionCorta": "Últimas novedades y comunidad tech" },
+          { "nombre": "Discord", "descripcionCorta": "Comunidad en tiempo real y soporte" },
+          { "nombre": "WhatsApp", "descripcionCorta": "Grupos de comunidad y avisos" }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "tipoSeccion": "preguntas_frecuentes",
+      "orden": 9,
+      "descripcionTipo": "Acordeón (pregunta clickeable, respuesta colapsable).",
+      "contenido": {
+        "etiqueta": "Preguntas Frecuentes",
+        "titulo": "Preguntas Frecuentes",
+        "items": [
+          {
+            "pregunta": "¿Necesito experiencia previa en programación?",
+            "respuesta": "Se recomienda conocimiento básico pero no es estrictamente necesario. AI TechProducts está diseñado para personas que quieren construir — aprenderás fundamentos mientras creas productos reales. La clave es la voluntad de entender, no solo generar."
+          },
+          {
+            "pregunta": "¿Cuánto dura el programa AI TechProducts?",
+            "respuesta": "Cada ciclo dura 3 meses, dividido en sprints de 3-4 semanas. Construirás mínimo 3 productos de IA desplegados, con consultorías semanales para feedback y guía."
+          },
+          {
+            "pregunta": "¿Puedo usar cualquier herramienta de IA?",
+            "respuesta": "¡Sí! Claude Code, Cursor, Windsurf, Lovable, plataformas no-code — usa lo que te ayude a construir. La diferencia es que debes entender y explicar lo que las herramientas produjeron. Abrazamos las herramientas; rechazamos la dependencia ciega."
+          },
+          {
+            "pregunta": "¿Qué diferencia a AI TechProducts de otros bootcamps?",
+            "respuesta": "Los bootcamps tradicionales te enseñan a seguir tutoriales. AI TechProducts requiere que construyas productos reales, los despliegues con usuarios reales y demuestres que entiendes los fundamentos. Tu portafolio se compone de productos vivos, no de tareas."
+          },
+          {
+            "pregunta": "¿Cómo funciona la plataforma Umbral?",
+            "respuesta": "Umbral es tu centro de control — rastrea tus proyectos desplegados, los fundamentos que dominas, tu historial de iteraciones y tu documentación de aprendizaje. Piénsalo como un portafolio vivo que demuestra que construiste con entendimiento."
+          },
+          {
+            "pregunta": "¿Hay becas disponibles?",
+            "respuesta": "Sí. Estamos comprometidos con democratizar el acceso. Los detalles de becas para la próxima cohorte se anunciarán cuando abramos inscripciones. Síguenos en redes para mantenerte informado."
+          },
+          {
+            "pregunta": "¿Los eventos son presenciales o virtuales?",
+            "respuesta": "¡Ambos! Nuestros hackathons suelen ser presenciales (como el AI Hackathon Peru en la UPCH), mientras que los bootcamps y AI TechProducts incluyen componentes virtuales para llegar a toda Latinoamérica."
+          }
+        ]
+      }
+    },
+    {
+      "id": "waitlist",
+      "tipoSeccion": "cta_final_formulario",
+      "orden": 10,
+      "descripcionTipo": "CTA final: titular en dos líneas, subtítulo, formulario email + botón (lista de espera), texto anti-spam, bloque secundario de alianzas con enlace mailto.",
+      "contenido": {
+        "titularLinea1": "¿Listo para Entender",
+        "titularLinea2": "Lo Que Construyes?",
+        "subtitulo": "Únete a la comunidad que está redefiniendo cómo se aprende IA en Latinoamérica. Sé el primero en saber cuando abramos la próxima cohorte.",
+        "formulario": {
+          "placeholderEmail": "tu@email.com",
+          "boton": "Únete a la Lista",
+          "notaPrivacidad": "Sin spam. Cancela cuando quieras."
+        },
+        "bloqueAlianzas": {
+          "textoEnfasis": "¿Quieres ser parte de esto?",
+          "texto": "Buscamos aliados que crean en democratizar la IA en LATAM.",
+          "cta": { "texto": "Contacto para Alianzas", "mailto": "contact@aiplaygrounds.com" }
+        }
+      }
+    },
+    {
+      "id": "footer",
+      "tipoSeccion": "pie_pagina",
+      "orden": 11,
+      "descripcionTipo": "Pie: marca, columnas de enlaces, newsletter con input, tira de nombres de aliados (texto), copyright, idioma y mini-enlaces sociales.",
+      "contenido": {
+        "eslogan": "Democratizando el conocimiento práctico de IA en Latinoamérica.",
+        "newsletter": {
+          "texto": "Suscríbete a nuestro newsletter para actualizaciones",
+          "boton": "Suscribirse",
+          "placeholderEmail": "tu@email.com"
+        },
+        "columnas": {
+          "Program": [
+            { "etiqueta": "AI TechProducts", "href": "#program" },
+            { "etiqueta": "Umbral", "href": "#" },
+            { "etiqueta": "Bootcamps", "href": "#" }
+          ],
+          "Events": [
+            { "etiqueta": "Hack@LATAM", "href": "#" },
+            { "etiqueta": "DevDay LATAM", "href": "#" },
+            { "etiqueta": "Fellowship", "href": "#" }
+          ],
+          "Community": [
+            { "etiqueta": "Discord", "href": "#" },
+            { "etiqueta": "LinkedIn", "href": "#" },
+            { "etiqueta": "Instagram", "href": "#" },
+            { "etiqueta": "Twitter / X", "href": "#" }
+          ],
+          "Legal": [
+            { "etiqueta": "Términos", "href": "#" },
+            { "etiqueta": "Privacidad", "href": "#" }
+          ]
+        },
+        "etiquetaAliados": "Aliados",
+        "aliados": [
+          "Looper.ai", "SpinOut", "Globant", "LetyMind",
+          "The Hackathon Company", "Pymut", "UPCH", "Bioincuba", "UTEC Ventures"
+        ],
+        "copyright": "© 2025 AI PlayGrounds. Democratizando la IA en LATAM.",
+        "enlacesPieSociales": ["LinkedIn", "Instagram", "X", "Discord"]
+      }
+    }
+  ]
+}
