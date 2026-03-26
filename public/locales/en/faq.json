@@ -1,0 +1,34 @@
+{
+  "etiqueta": "FAQ",
+  "titulo": "Frequently asked questions",
+  "items": [
+    {
+      "pregunta": "Do I need prior programming experience?",
+      "respuesta": "Basic knowledge helps but isn't strictly required. AI TechProducts is for people who want to build — you'll learn fundamentals while creating real products. What matters is the will to understand, not just generate."
+    },
+    {
+      "pregunta": "How long is the AI TechProducts program?",
+      "respuesta": "Each cycle lasts 3 months, split into 3–4 week sprints. You'll ship at least 3 AI products, with weekly office hours for feedback and guidance."
+    },
+    {
+      "pregunta": "Can I use any AI tool?",
+      "respuesta": "Yes! Claude Code, Cursor, Windsurf, Lovable, no-code — use what helps you ship. The difference is you must understand and explain what the tools produced. We embrace tools; we reject blind dependency."
+    },
+    {
+      "pregunta": "What makes AI TechProducts different from other bootcamps?",
+      "respuesta": "Traditional bootcamps teach you to follow tutorials. AI TechProducts requires real products, real users, and proof that you understand the fundamentals. Your portfolio is live products, not homework."
+    },
+    {
+      "pregunta": "How does the Umbral platform work?",
+      "respuesta": "Umbral is your control center — shipped projects, fundamentals you've mastered, iteration history, and learning notes. Think of it as a living portfolio that proves you built with understanding."
+    },
+    {
+      "pregunta": "Are scholarships available?",
+      "respuesta": "Yes. We're committed to broadening access. Scholarship details for the next cohort will be announced when applications open. Follow us on social for updates."
+    },
+    {
+      "pregunta": "Are events in person or virtual?",
+      "respuesta": "Both! Hackathons are often in person (like AI Hackathon Peru at UPCH), while bootcamps and AI TechProducts include virtual components to reach all of Latin America."
+    }
+  ]
+}

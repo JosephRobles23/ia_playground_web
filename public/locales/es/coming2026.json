@@ -1,0 +1,41 @@
+{
+  "etiqueta": "Próximamente",
+  "titulo": "Lo Que Viene en 2026",
+  "subtitulo": "Escalamos nuestra misión a toda Latinoamérica.",
+  "iniciativas": [
+    {
+      "icono": "🌎",
+      "titulo": "Hack@LATAM",
+      "descripcion": "Hackathon regional con comunidades de toda Latinoamérica",
+      "categoria": "Hackathon"
+    },
+    {
+      "icono": "📖",
+      "titulo": "Bootcamps Fundamentales",
+      "descripcion": "Fundamentos de IA, GenAI y Agentes — tracks de conocimiento profundo",
+      "categoria": "Educación"
+    },
+    {
+      "icono": "✈️",
+      "titulo": "DevDay LATAM",
+      "descripcion": "Alianza con Pymut: 6 horas simultáneas en múltiples países. ¡Los ganadores viajan a Silicon Valley!",
+      "categoria": "Silicon Valley"
+    },
+    {
+      "icono": "🤝",
+      "titulo": "Fellowship de Impacto Regional",
+      "descripcion": "Herramientas tech y conocimiento para todas las regiones del Perú",
+      "categoria": "Fellowship"
+    },
+    {
+      "icono": "🏗️",
+      "titulo": "Incubadoras PG",
+      "descripcion": "Las mejores iniciativas de AI TechProducts conectadas con incubadoras y aceleradoras aliadas",
+      "categoria": "Incubación"
+    }
+  ],
+  "cta": {
+    "texto": "Mantenerme Informado",
+    "ancla": "#waitlist"
+  }
+}

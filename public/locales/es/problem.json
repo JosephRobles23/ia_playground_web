@@ -1,0 +1,56 @@
+{
+  "etiqueta": "El problema del que nadie habla",
+  "tituloLinea1": "El Nuevo \"Tutorial Hell\"",
+  "tituloLinea2": "de la Era de la IA",
+  "subtituloHtml": "Las herramientas de IA generativa te permiten <em>producir</em> más rápido que nunca. Pero producir no es lo mismo que <strong>entender</strong>.",
+  "pasos": [
+    {
+      "numero": "1",
+      "titulo": "Usas herramientas de IA",
+      "descripcion": "Claude Code, Cursor, Windsurf, Lovable..."
+    },
+    {
+      "numero": "2",
+      "titulo": "Generas código",
+      "descripcion": "La IA crea una solución funcional por ti"
+    },
+    {
+      "numero": "3",
+      "titulo": "Haces deploy",
+      "descripcion": "Tienes algo 'en producción'"
+    },
+    {
+      "numero": "4",
+      "titulo": "Te preguntan cómo funciona",
+      "descripcion": "...y no puedes explicarlo"
+    },
+    {
+      "numero": "5",
+      "titulo": "Algo se rompe",
+      "descripcion": "...y no sabes cómo arreglarlo"
+    },
+    {
+      "numero": "6",
+      "titulo": "Sale una nueva herramienta",
+      "descripcion": "...y tienes que empezar de cero"
+    }
+  ],
+  "cita": "\"Tienes proyectos desplegados pero no conocimiento. Eres un operador de herramientas, no un constructor de soluciones.\"",
+  "estadisticas": [
+    {
+      "valor": "73",
+      "sufijo": "%",
+      "etiqueta": "no puede explicar su propio código"
+    },
+    {
+      "valor": "68",
+      "sufijo": "%",
+      "etiqueta": "no puede debuggear sin IA"
+    },
+    {
+      "valor": "81",
+      "sufijo": "%",
+      "etiqueta": "depende de una sola herramienta"
+    }
+  ]
+}

@@ -1,10 +1,11 @@
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
-import { getSectionContent } from "@/features/landing/content"
 import { SectionKicker } from "@/features/landing/components/shared"
+import type { Locale } from "@/public/i18n/config"
+import { getSectionContent } from "@/public/i18n/load"
 
-export function CommunitySection() {
-  const c = getSectionContent("community")
+export function CommunitySection({ locale }: { locale: Locale }) {
+  const c = getSectionContent(locale, "community")
   if (!c || !("redes" in c)) return null
 
   return (

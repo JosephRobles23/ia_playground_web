@@ -1,0 +1,51 @@
+{
+  "etiqueta": "Platform",
+  "titulo": "Umbral",
+  "eslogan": "\"Build. Ship. Learn.\"",
+  "descripcionHtml": "Your control center to build a real technical portfolio while learning AI fundamentals. Umbral is where you show you didn't just <em>generate</em> — you <strong>built with understanding</strong>.",
+  "caracteristicas": [
+    {
+      "icono": "🌐",
+      "titulo": "Shipped projects",
+      "descripcion": "Track projects with live URLs and real usage metrics"
+    },
+    {
+      "icono": "📚",
+      "titulo": "Mastered fundamentals",
+      "descripcion": "A record of concepts you applied and can explain"
+    },
+    {
+      "icono": "🔄",
+      "titulo": "Iteration history",
+      "descripcion": "How your project evolved with real feedback"
+    },
+    {
+      "icono": "📝",
+      "titulo": "Learning notes",
+      "descripcion": "Your technical takeaways from each sprint"
+    }
+  ],
+  "mockupUi": {
+    "tipo": "browser_chrome_mockup",
+    "urlBarra": "umbral.aiplaygrounds.com",
+    "cabeceraPortafolio": "My portfolio",
+    "cohorte": "Cohort 2026",
+    "etiquetaFundamentos": "Mastered fundamentals",
+    "proyecto1": {
+      "nombre": "AI support bot",
+      "estado": "Live",
+      "etiquetas": ["NLP", "RAG", "FastAPI"],
+      "porcentaje": "85"
+    },
+    "proyecto2": {
+      "nombre": "Smart document analyzer",
+      "estado": "Iterating",
+      "etiquetas": ["Vision", "Embeddings"],
+      "porcentaje": "60"
+    },
+    "miniEstadisticas": {
+      "etiquetas": ["Shipped", "Concepts", "Users"],
+      "nota": "In the current UI the numbers 2, 12, 47 are fixed in the component."
+    }
+  }
+}

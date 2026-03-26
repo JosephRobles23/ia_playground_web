@@ -1,8 +1,9 @@
-import { getSectionContent } from "@/features/landing/content"
-import { HtmlSnippet, SectionKicker } from "@/features/landing/components/shared"
+import { GlowingCard, HtmlSnippet, SectionKicker } from "@/features/landing/components/shared"
+import type { Locale } from "@/public/i18n/config"
+import { getSectionContent } from "@/public/i18n/load"
 
-export function ProblemSection() {
-  const c = getSectionContent("problem")
+export function ProblemSection({ locale }: { locale: Locale }) {
+  const c = getSectionContent(locale, "problem")
   if (!c || !("pasos" in c)) return null
 
   return (
@@ -22,16 +23,17 @@ export function ProblemSection() {
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {c.pasos.map((paso: { numero: string; titulo: string; descripcion: string }) => (
-            <div
-              key={paso.numero}
-              className="flex gap-4 rounded-2xl border border-border/80 bg-background p-4 shadow-sm"
-            >
-              <span className="shrink-0 pt-0.5 text-sm font-semibold tabular-nums text-primary">{paso.numero}.</span>
-              <div className="min-w-0">
-                <h3 className="font-medium leading-snug">{paso.titulo}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">{paso.descripcion}</p>
+            <GlowingCard key={paso.numero} innerClassName="p-4">
+              <div className="flex gap-4">
+                <span className="shrink-0 pt-0.5 text-sm font-semibold tabular-nums text-primary">
+                  {paso.numero}.
+                </span>
+                <div className="min-w-0">
+                  <h3 className="font-medium leading-snug">{paso.titulo}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">{paso.descripcion}</p>
+                </div>
               </div>
-            </div>
+            </GlowingCard>
           ))}
         </div>
 

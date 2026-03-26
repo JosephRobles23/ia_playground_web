@@ -1,0 +1,85 @@
+{
+  "eslogan": "Democratizando el conocimiento práctico de IA en Latinoamérica.",
+  "newsletter": {
+    "texto": "Suscríbete a nuestro newsletter para actualizaciones",
+    "boton": "Suscribirse",
+    "placeholderEmail": "tu@email.com"
+  },
+  "columnas": {
+    "Program": [
+      {
+        "etiqueta": "AI TechProducts",
+        "href": "#program"
+      },
+      {
+        "etiqueta": "Umbral",
+        "href": "#"
+      },
+      {
+        "etiqueta": "Bootcamps",
+        "href": "#"
+      }
+    ],
+    "Events": [
+      {
+        "etiqueta": "Hack@LATAM",
+        "href": "#"
+      },
+      {
+        "etiqueta": "DevDay LATAM",
+        "href": "#"
+      },
+      {
+        "etiqueta": "Fellowship",
+        "href": "#"
+      }
+    ],
+    "Community": [
+      {
+        "etiqueta": "Discord",
+        "href": "#"
+      },
+      {
+        "etiqueta": "LinkedIn",
+        "href": "#"
+      },
+      {
+        "etiqueta": "Instagram",
+        "href": "#"
+      },
+      {
+        "etiqueta": "Twitter / X",
+        "href": "#"
+      }
+    ],
+    "Legal": [
+      {
+        "etiqueta": "Términos",
+        "href": "#"
+      },
+      {
+        "etiqueta": "Privacidad",
+        "href": "#"
+      }
+    ]
+  },
+  "etiquetaAliados": "Aliados",
+  "aliados": [
+    "Looper.ai",
+    "SpinOut",
+    "Globant",
+    "LetyMind",
+    "The Hackathon Company",
+    "Pymut",
+    "UPCH",
+    "Bioincuba",
+    "UTEC Ventures"
+  ],
+  "copyright": "© 2025 AI PlayGrounds. Democratizando la IA en LATAM.",
+  "enlacesPieSociales": [
+    "LinkedIn",
+    "Instagram",
+    "X",
+    "Discord"
+  ]
+}

@@ -5,10 +5,11 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
-import { getSectionContent } from "@/features/landing/content"
+import type { Locale } from "@/public/i18n/config"
+import { getSectionContent } from "@/public/i18n/load"
 
-export function WaitlistSection() {
-  const c = getSectionContent("waitlist")
+export function WaitlistSection({ locale }: { locale: Locale }) {
+  const c = getSectionContent(locale, "waitlist")
   if (!c || !("formulario" in c)) return null
 
   return (

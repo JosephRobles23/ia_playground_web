@@ -1,0 +1,33 @@
+{
+  "etiqueta": "Results",
+  "titulo": "Our 2025 journey",
+  "subtitulo": "In our first year, we already made an impact across Latin America.",
+  "estadisticas": [
+    { "valor": "1000", "sufijo": "+", "etiqueta": "Hackathon signups" },
+    { "valor": "300", "sufijo": "+", "etiqueta": "Bootcamp participants" },
+    { "valor": "16", "sufijo": "", "etiqueta": "International speakers" },
+    { "valor": "40", "sufijo": "", "etiqueta": "Full scholarships" }
+  ],
+  "eventosTimeline": [
+    {
+      "titulo": "Bootcamp GenAI Fundamentals",
+      "descripcion": "National bootcamp on generative AI fundamentals. 300+ signups, 40 full scholarships in Peru and Chile. 16 international speakers.",
+      "etiquetas": ["Bootcamp", "Peru", "Chile"]
+    },
+    {
+      "titulo": "The Real AI",
+      "descripcion": "Event for founders: 'Do you really need AI in your processes?' Cutting through hype to find real needs.",
+      "etiquetas": ["Founders", "Strategy"]
+    },
+    {
+      "titulo": "Colombia Tech Week",
+      "descripcion": "Participation in Tech Fest and Platzi Conf. Staff at AI Hackathon Colombia. Networking with LATAM tech leaders.",
+      "etiquetas": ["Colombia", "Networking"]
+    },
+    {
+      "titulo": "AI Hackathon Peru 2025",
+      "descripcion": "Peru's largest AI hackathon. 1,000+ signups, 120 selected. 24 hours building. $1,500 USD in prizes.",
+      "etiquetas": ["Flagship", "Hackathon", "Peru"]
+    }
+  ]
+}

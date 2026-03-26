@@ -4,11 +4,13 @@ import { Button } from "@/components/ui/button"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 
-import { getSectionContent } from "@/features/landing/content"
 import { SectionKicker } from "@/features/landing/components/shared"
+import type { Locale } from "@/public/i18n/config"
+import { getSectionContent } from "@/public/i18n/load"
+import { hrefWithLocale } from "@/public/i18n/paths"
 
-export function ProgramSection() {
-  const c = getSectionContent("program")
+export function ProgramSection({ locale }: { locale: Locale }) {
+  const c = getSectionContent(locale, "program")
   if (!c || !("pilares" in c)) return null
 
   return (
@@ -77,7 +79,7 @@ export function ProgramSection() {
 
         <div className="mt-10 flex justify-center">
           <Button size="lg" className="rounded-full px-8" asChild>
-            <Link href={c.cta.ancla}>{c.cta.texto}</Link>
+            <Link href={hrefWithLocale(locale, c.cta.ancla)}>{c.cta.texto}</Link>
           </Button>
         </div>
       </div>

@@ -1,3 +1,4 @@
+import type { Locale } from "./i18n/config"
 import {
   Coming2026Section,
   CommunitySection,
@@ -13,23 +14,23 @@ import {
   WaitlistSection,
 } from "./components"
 
-export function LandingPage() {
+export function LandingPage({ locale }: { locale: Locale }) {
   return (
     <div className="flex min-h-screen flex-col">
-      <SiteHeader />
+      <SiteHeader locale={locale} />
       <main className="flex flex-1 flex-col">
-        <HeroSection />
-        <ProblemSection />
-        <ProgramSection />
-        <UmbralSection />
-        <TrajectorySection />
-        <EventsSection />
-        <Coming2026Section />
-        <CommunitySection />
-        <FaqSection />
-        <WaitlistSection />
+        <HeroSection locale={locale} />
+        <ProblemSection locale={locale} />
+        <ProgramSection locale={locale} />
+        <UmbralSection locale={locale} />
+        <TrajectorySection locale={locale} />
+        <EventsSection locale={locale} />
+        <Coming2026Section locale={locale} />
+        <CommunitySection locale={locale} />
+        <FaqSection locale={locale} />
+        <WaitlistSection locale={locale} />
       </main>
-      <SiteFooter />
+      <SiteFooter locale={locale} />
     </div>
   )
 }

@@ -1,13 +1,14 @@
 import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
-import { getSectionContent } from "@/features/landing/content"
-import { SectionKicker } from "@/features/landing/components/shared"
+import { GlowingCard, SectionKicker } from "@/features/landing/components/shared"
+import type { Locale } from "@/public/i18n/config"
+import { getSectionContent } from "@/public/i18n/load"
+import { hrefWithLocale } from "@/public/i18n/paths"
 
-export function Coming2026Section() {
-  const c = getSectionContent("coming2026")
+export function Coming2026Section({ locale }: { locale: Locale }) {
+  const c = getSectionContent(locale, "coming2026")
   if (!c || !("iniciativas" in c)) return null
 
   return (
@@ -21,19 +22,17 @@ export function Coming2026Section() {
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {c.iniciativas.map((item: { titulo: string; descripcion: string; categoria: string }) => (
-            <Card key={item.titulo} className="rounded-3xl border-border/80 shadow-md">
-              <CardHeader className="gap-2">
-                <p className="text-xs text-muted-foreground">{item.categoria}</p>
-                <CardTitle className="text-lg font-medium">{item.titulo}</CardTitle>
-                <CardDescription className="text-sm leading-relaxed">{item.descripcion}</CardDescription>
-              </CardHeader>
-            </Card>
+            <GlowingCard key={item.titulo} innerClassName="flex flex-col gap-3 p-6">
+              <p className="text-xs text-muted-foreground">{item.categoria}</p>
+              <h3 className="text-lg font-medium leading-snug">{item.titulo}</h3>
+              <p className="text-sm leading-relaxed text-muted-foreground">{item.descripcion}</p>
+            </GlowingCard>
           ))}
         </div>
 
         <div className="mt-10 flex justify-center">
           <Button size="lg" variant="outline" className="rounded-full px-8" asChild>
-            <Link href={c.cta.ancla}>{c.cta.texto}</Link>
+            <Link href={hrefWithLocale(locale, c.cta.ancla)}>{c.cta.texto}</Link>
           </Button>
         </div>
       </div>

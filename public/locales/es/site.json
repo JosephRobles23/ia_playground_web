@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "idioma": "es",
+    "tituloPagina": "AI PlayGrounds — Entiende la IA. Construye el Futuro.",
+    "descripcion": "Democratizando el conocimiento práctico de IA en Latinoamérica. Construye productos de IA reales, despliégalos y entiende lo que construyes."
+  },
+  "navegacion": {
+    "tipo": "navbar",
+    "marca": "AI PlayGrounds",
+    "enlaces": [
+      {
+        "texto": "Programa",
+        "ancla": "#program"
+      },
+      {
+        "texto": "Eventos",
+        "ancla": "#events"
+      },
+      {
+        "texto": "Comunidad",
+        "ancla": "#community"
+      },
+      {
+        "texto": "Trayectoria",
+        "ancla": "#trajectory"
+      }
+    ],
+    "alternarIdioma": {
+      "etiqueta": "EN",
+      "ruta": "/en"
+    },
+    "cta": {
+      "texto": "Únete a la Lista",
+      "ancla": "#waitlist"
+    }
+  }
+}

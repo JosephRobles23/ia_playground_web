@@ -1,0 +1,34 @@
+{
+  "etiqueta": "Preguntas Frecuentes",
+  "titulo": "Preguntas Frecuentes",
+  "items": [
+    {
+      "pregunta": "¿Necesito experiencia previa en programación?",
+      "respuesta": "Se recomienda conocimiento básico pero no es estrictamente necesario. AI TechProducts está diseñado para personas que quieren construir — aprenderás fundamentos mientras creas productos reales. La clave es la voluntad de entender, no solo generar."
+    },
+    {
+      "pregunta": "¿Cuánto dura el programa AI TechProducts?",
+      "respuesta": "Cada ciclo dura 3 meses, dividido en sprints de 3-4 semanas. Construirás mínimo 3 productos de IA desplegados, con consultorías semanales para feedback y guía."
+    },
+    {
+      "pregunta": "¿Puedo usar cualquier herramienta de IA?",
+      "respuesta": "¡Sí! Claude Code, Cursor, Windsurf, Lovable, plataformas no-code — usa lo que te ayude a construir. La diferencia es que debes entender y explicar lo que las herramientas produjeron. Abrazamos las herramientas; rechazamos la dependencia ciega."
+    },
+    {
+      "pregunta": "¿Qué diferencia a AI TechProducts de otros bootcamps?",
+      "respuesta": "Los bootcamps tradicionales te enseñan a seguir tutoriales. AI TechProducts requiere que construyas productos reales, los despliegues con usuarios reales y demuestres que entiendes los fundamentos. Tu portafolio se compone de productos vivos, no de tareas."
+    },
+    {
+      "pregunta": "¿Cómo funciona la plataforma Umbral?",
+      "respuesta": "Umbral es tu centro de control — rastrea tus proyectos desplegados, los fundamentos que dominas, tu historial de iteraciones y tu documentación de aprendizaje. Piénsalo como un portafolio vivo que demuestra que construiste con entendimiento."
+    },
+    {
+      "pregunta": "¿Hay becas disponibles?",
+      "respuesta": "Sí. Estamos comprometidos con democratizar el acceso. Los detalles de becas para la próxima cohorte se anunciarán cuando abramos inscripciones. Síguenos en redes para mantenerte informado."
+    },
+    {
+      "pregunta": "¿Los eventos son presenciales o virtuales?",
+      "respuesta": "¡Ambos! Nuestros hackathons suelen ser presenciales (como el AI Hackathon Peru en la UPCH), mientras que los bootcamps y AI TechProducts incluyen componentes virtuales para llegar a toda Latinoamérica."
+    }
+  ]
+}

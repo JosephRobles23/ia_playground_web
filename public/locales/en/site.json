@@ -1,0 +1,25 @@
+{
+  "meta": {
+    "idioma": "en",
+    "tituloPagina": "AI PlayGrounds — Understand AI. Build the Future.",
+    "descripcion": "Democratizing practical AI knowledge in Latin America. Build real AI products, ship them, and understand what you build."
+  },
+  "navegacion": {
+    "tipo": "navbar",
+    "marca": "AI PlayGrounds",
+    "enlaces": [
+      { "texto": "Program", "ancla": "#program" },
+      { "texto": "Events", "ancla": "#events" },
+      { "texto": "Community", "ancla": "#community" },
+      { "texto": "Our journey", "ancla": "#trajectory" }
+    ],
+    "alternarIdioma": {
+      "etiqueta": "ES",
+      "ruta": "/es"
+    },
+    "cta": {
+      "texto": "Join the waitlist",
+      "ancla": "#waitlist"
+    }
+  }
+}

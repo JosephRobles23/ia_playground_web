@@ -1,0 +1,46 @@
+{
+  "etiqueta": "The solution",
+  "titulo": "AI TechProducts",
+  "cita": "\"If you can't explain it, you didn't build it — you only generated it.\"",
+  "pilares": [
+    {
+      "icono": "🔨",
+      "titulo": "Build real products",
+      "descripcion": "Use any tools you want — Claude Code, Cursor, Windsurf, no-code. What matters is the outcome and that you understand it."
+    },
+    {
+      "icono": "🧠",
+      "titulo": "Prove you understand",
+      "descripcion": "Explain what the AI did, why it works, and how you'd change it without starting from zero."
+    },
+    {
+      "icono": "🚀",
+      "titulo": "Ship to real users",
+      "descripcion": "Launch to real users who give feedback. Iterate based on real usage, not guesses."
+    }
+  ],
+  "tituloHitos": "The 4 milestones of every project",
+  "hitos": [
+    { "numero": "01", "titulo": "Design & architecture", "descripcion": "Plan your solution and define the technical approach" },
+    { "numero": "02", "titulo": "Development 1.0", "descripcion": "Build and ship your first working version" },
+    { "numero": "03", "titulo": "Iteration with feedback", "descripcion": "Collect feedback from real users and iterate" },
+    { "numero": "04", "titulo": "Deploy & user testing", "descripcion": "Final deployment with documented learnings" }
+  ],
+  "tituloValidacion": "How we validate learning",
+  "preguntasValidacion": [
+    "Can you explain what each part of your code does?",
+    "Can you spot where the AI applied specific concepts?",
+    "Can you change the solution without asking the AI to redo everything?",
+    "Can you defend your architecture and technical decisions?"
+  ],
+  "metricasEstructura": [
+    { "valor": "3", "etiqueta": "months per cycle" },
+    { "valor": "3-4", "etiqueta": "weeks per sprint" },
+    { "valor": "3+", "etiqueta": "shipped products" },
+    { "valor": "1-2", "etiqueta": "people per team" }
+  ],
+  "cta": {
+    "texto": "Join the AI TechProducts waitlist",
+    "ancla": "#waitlist"
+  }
+}

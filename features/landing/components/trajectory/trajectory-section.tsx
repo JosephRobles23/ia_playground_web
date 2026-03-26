@@ -1,10 +1,11 @@
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
-import { getSectionContent } from "@/features/landing/content"
 import { SectionKicker } from "@/features/landing/components/shared"
+import type { Locale } from "@/public/i18n/config"
+import { getSectionContent } from "@/public/i18n/load"
 
-export function TrajectorySection() {
-  const c = getSectionContent("trajectory")
+export function TrajectorySection({ locale }: { locale: Locale }) {
+  const c = getSectionContent(locale, "trajectory")
   if (!c || !("eventosTimeline" in c)) return null
 
   return (

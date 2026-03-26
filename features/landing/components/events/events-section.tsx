@@ -3,11 +3,12 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 
-import { getSectionContent } from "@/features/landing/content"
 import { SectionKicker } from "@/features/landing/components/shared"
+import type { Locale } from "@/public/i18n/config"
+import { getSectionContent } from "@/public/i18n/load"
 
-export function EventsSection() {
-  const c = getSectionContent("events")
+export function EventsSection({ locale }: { locale: Locale }) {
+  const c = getSectionContent(locale, "events")
   if (!c || !("jurado" in c)) return null
 
   return (

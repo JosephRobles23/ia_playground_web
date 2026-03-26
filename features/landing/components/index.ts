@@ -11,4 +11,4 @@ export { TrajectorySection } from "./trajectory"
 export { UmbralSection } from "./umbral"
 export { WaitlistSection } from "./waitlist"
 
-export { HtmlSnippet, SectionKicker } from "./shared"
+export { GlowingCard, HtmlSnippet, SectionKicker } from "./shared"

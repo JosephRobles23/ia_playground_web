@@ -3,10 +3,12 @@ import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
 
-import { getSectionContent } from "@/features/landing/content"
+import type { Locale } from "@/public/i18n/config"
+import { getSectionContent } from "@/public/i18n/load"
+import { hrefWithLocale } from "@/public/i18n/paths"
 
-export function HeroSection() {
-  const c = getSectionContent("hero")
+export function HeroSection({ locale }: { locale: Locale }) {
+  const c = getSectionContent(locale, "hero")
   if (!c || !("mockupCodigo" in c)) return null
 
   const items = [...c.pasarelaLogos.items, ...c.pasarelaLogos.items]
@@ -17,7 +19,7 @@ export function HeroSection() {
       id="hero"
     >
       <div
-        className="pointer-events-none absolute left-2/2 top-[-8rem] -z-10 size-[min(100vw,900px)] -translate-x-2/2 opacity-30"
+        className="pointer-events-none absolute left-2/2 top-[-8rem] -z-10 size-[min(100vw,800px)] -translate-x-2/2 opacity-30"
         aria-hidden
       >
         <Image
@@ -45,7 +47,7 @@ export function HeroSection() {
 
         <div className="mt-10 flex w-full flex-col items-center justify-center gap-3 sm:flex-row">
           <Button variant="default" size="lg" className="rounded-full px-6" asChild>
-            <Link href={c.ctaPrincipal.ancla}>{c.ctaPrincipal.texto}</Link>
+            <Link href={hrefWithLocale(locale, c.ctaPrincipal.ancla)}>{c.ctaPrincipal.texto}</Link>
           </Button>
           <Button
             variant="outline"
@@ -53,7 +55,7 @@ export function HeroSection() {
             className="rounded-full border-border bg-background/80 px-6 shadow-sm backdrop-blur-sm"
             asChild
           >
-            <Link href={c.ctaSecundario.ancla}>{c.ctaSecundario.texto}</Link>
+            <Link href={hrefWithLocale(locale, c.ctaSecundario.ancla)}>{c.ctaSecundario.texto}</Link>
           </Button>
         </div>
 

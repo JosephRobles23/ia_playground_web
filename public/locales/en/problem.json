@@ -1,0 +1,20 @@
+{
+  "etiqueta": "The problem no one talks about",
+  "tituloLinea1": "The New \"Tutorial Hell\"",
+  "tituloLinea2": "of the AI Era",
+  "subtituloHtml": "Generative AI tools let you <em>produce</em> faster than ever. But producing isn't the same as <strong>understanding</strong>.",
+  "pasos": [
+    { "numero": "1", "titulo": "You use AI tools", "descripcion": "Claude Code, Cursor, Windsurf, Lovable..." },
+    { "numero": "2", "titulo": "You generate code", "descripcion": "The AI builds a working solution for you" },
+    { "numero": "3", "titulo": "You ship", "descripcion": "You have something 'in production'" },
+    { "numero": "4", "titulo": "Someone asks how it works", "descripcion": "...and you can't explain it" },
+    { "numero": "5", "titulo": "Something breaks", "descripcion": "...and you don't know how to fix it" },
+    { "numero": "6", "titulo": "A new tool drops", "descripcion": "...and you start from scratch again" }
+  ],
+  "cita": "\"You have shipped projects but not knowledge. You're a tool operator, not a solution builder.\"",
+  "estadisticas": [
+    { "valor": "73", "sufijo": "%", "etiqueta": "can't explain their own code" },
+    { "valor": "68", "sufijo": "%", "etiqueta": "can't debug without AI" },
+    { "valor": "81", "sufijo": "%", "etiqueta": "depends on a single tool" }
+  ]
+}

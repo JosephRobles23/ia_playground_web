@@ -1,8 +1,9 @@
-import { getSectionContent } from "@/features/landing/content"
-import { HtmlSnippet, SectionKicker } from "@/features/landing/components/shared"
+import { GlowingCard, HtmlSnippet, SectionKicker } from "@/features/landing/components/shared"
+import type { Locale } from "@/public/i18n/config"
+import { getSectionContent } from "@/public/i18n/load"
 
-export function UmbralSection() {
-  const c = getSectionContent("umbral")
+export function UmbralSection({ locale }: { locale: Locale }) {
+  const c = getSectionContent(locale, "umbral")
   if (!c || !("mockupUi" in c)) return null
   const m = c.mockupUi
 
@@ -39,7 +40,10 @@ export function UmbralSection() {
               {m.etiquetaFundamentos}
             </p>
             <div className="space-y-3">
-              <div className="rounded-xl border border-border/80 bg-muted/30 p-3">
+              <GlowingCard
+                className="border-border/60"
+                innerClassName="bg-muted/30 p-3"
+              >
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <span className="font-medium">{m.proyecto1.nombre}</span>
                   <span className="text-xs text-emerald-700 dark:text-emerald-300">{m.proyecto1.estado}</span>
@@ -51,8 +55,11 @@ export function UmbralSection() {
                     style={{ width: `${m.proyecto1.porcentaje}%` }}
                   />
                 </div>
-              </div>
-              <div className="rounded-xl border border-border/80 bg-muted/30 p-3">
+              </GlowingCard>
+              <GlowingCard
+                className="border-border/60"
+                innerClassName="bg-muted/30 p-3"
+              >
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <span className="font-medium">{m.proyecto2.nombre}</span>
                   <span className="text-xs text-amber-800 dark:text-amber-200">{m.proyecto2.estado}</span>
@@ -64,16 +71,21 @@ export function UmbralSection() {
                     style={{ width: `${m.proyecto2.porcentaje}%` }}
                   />
                 </div>
+              </GlowingCard>
+            </div>
+            <GlowingCard
+              className="border-dashed border-border/80"
+              innerClassName="border border-dashed border-border/80 bg-muted/20 p-3 text-center"
+            >
+              <div className="grid grid-cols-3 gap-2">
+                {m.miniEstadisticas.etiquetas.map((label: string, i: number) => (
+                  <div key={label}>
+                    <p className="text-lg font-semibold tabular-nums">{i === 0 ? "2" : i === 1 ? "12" : "47"}</p>
+                    <p className="text-[0.65rem] text-muted-foreground">{label}</p>
+                  </div>
+                ))}
               </div>
-            </div>
-            <div className="grid grid-cols-3 gap-2 rounded-xl border border-dashed border-border bg-muted/20 p-3 text-center">
-              {m.miniEstadisticas.etiquetas.map((label: string, i: number) => (
-                <div key={label}>
-                  <p className="text-lg font-semibold tabular-nums">{i === 0 ? "2" : i === 1 ? "12" : "47"}</p>
-                  <p className="text-[0.65rem] text-muted-foreground">{label}</p>
-                </div>
-              ))}
-            </div>
+            </GlowingCard>
             <p className="text-center text-[0.65rem] text-muted-foreground">{m.miniEstadisticas.nota}</p>
           </div>
         </div>

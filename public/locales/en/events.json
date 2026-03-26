@@ -1,0 +1,44 @@
+{
+  "etiqueta": "Flagship event",
+  "titulo": "AI Hackathon Peru 2025",
+  "subtitulo": "Peru's leading AI hackathon",
+  "descripcion": "We brought the country's best AI talent together for 24 hours of non-stop building, mentorship from international CTOs, and real prizes. This event showed Peru's AI community can compete globally.",
+  "estadisticas": [
+    { "valor": "1,000+", "etiqueta": "Signups" },
+    { "valor": "120", "etiqueta": "Selected" },
+    { "valor": "24h", "etiqueta": "Non-stop building" },
+    { "valor": "$1,500", "etiqueta": "USD in prizes" }
+  ],
+  "tituloJurado": "International jury",
+  "jurado": [
+    { "nombre": "Adrian Mastronardi", "rol": "CTO of Habi", "pais": "Colombia" },
+    { "nombre": "Martin Pelaez", "rol": "CTO of Plenty", "pais": "Colombia" },
+    { "nombre": "Piero Sifuentes", "rol": "CTO of Hapi", "pais": "Peru" },
+    { "nombre": "Sebastian Ruiz", "rol": "Program Lead at UTEC Ventures", "pais": "Peru" },
+    { "nombre": "Gonzalo Aller", "rol": "Business Incubator Manager", "pais": "Peru" }
+  ],
+  "tituloSponsors": "Sponsors & partners",
+  "sponsors": [
+    "UPCH",
+    "Bioincuba",
+    "Yavendió!",
+    "ElevenLabs",
+    "Human",
+    "Cursor",
+    "Lovable",
+    "V0",
+    "Repensar",
+    "Valtec",
+    "Nutriera",
+    "Leasy",
+    "Finity",
+    "CloudforgeAI",
+    "Huawei",
+    "Clerk",
+    "Little Caesars"
+  ],
+  "cta": {
+    "texto": "Visit the hackathon page",
+    "url": "https://www.peru.ai-hackathon.co/"
+  }
+}

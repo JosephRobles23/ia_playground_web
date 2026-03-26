@@ -1,0 +1,76 @@
+{
+  "etiqueta": "Evento Principal",
+  "titulo": "AI Hackathon Peru 2025",
+  "subtitulo": "El mejor hackathon de IA realizado en el Perú",
+  "descripcion": "Reunimos al mejor talento de IA del país durante 24 horas de construcción sin parar, mentoría de CTOs internacionales y premios reales. Este fue el evento que demostró que la comunidad de IA en Perú está lista para competir a nivel global.",
+  "estadisticas": [
+    {
+      "valor": "1,000+",
+      "etiqueta": "Inscritos"
+    },
+    {
+      "valor": "120",
+      "etiqueta": "Seleccionados"
+    },
+    {
+      "valor": "24h",
+      "etiqueta": "Construyendo sin parar"
+    },
+    {
+      "valor": "$1,500",
+      "etiqueta": "USD en premios"
+    }
+  ],
+  "tituloJurado": "Jurado Internacional",
+  "jurado": [
+    {
+      "nombre": "Adrian Mastronardi",
+      "rol": "CTO of Habi",
+      "pais": "Colombia"
+    },
+    {
+      "nombre": "Martin Pelaez",
+      "rol": "CTO of Plenty",
+      "pais": "Colombia"
+    },
+    {
+      "nombre": "Piero Sifuentes",
+      "rol": "CTO of Hapi",
+      "pais": "Peru"
+    },
+    {
+      "nombre": "Sebastian Ruiz",
+      "rol": "Program Lead at UTEC Ventures",
+      "pais": "Peru"
+    },
+    {
+      "nombre": "Gonzalo Aller",
+      "rol": "Business Incubator Manager",
+      "pais": "Peru"
+    }
+  ],
+  "tituloSponsors": "Sponsors y Aliados",
+  "sponsors": [
+    "UPCH",
+    "Bioincuba",
+    "Yavendió!",
+    "ElevenLabs",
+    "Human",
+    "Cursor",
+    "Lovable",
+    "V0",
+    "Repensar",
+    "Valtec",
+    "Nutriera",
+    "Leasy",
+    "Finity",
+    "CloudforgeAI",
+    "Huawei",
+    "Clerk",
+    "Little Caesars"
+  ],
+  "cta": {
+    "texto": "Visita la Página del Hackathon",
+    "url": "https://www.peru.ai-hackathon.co/"
+  }
+}

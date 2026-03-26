@@ -12,11 +12,12 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Separator } from "@/components/ui/separator"
 
-import { getSectionContent } from "@/features/landing/content"
 import { SectionKicker } from "@/features/landing/components/shared"
+import type { Locale } from "@/public/i18n/config"
+import { getSectionContent } from "@/public/i18n/load"
 
-export function FaqSection() {
-  const c = getSectionContent("faq")
+export function FaqSection({ locale }: { locale: Locale }) {
+  const c = getSectionContent(locale, "faq")
   if (!c || !("items" in c)) return null
 
   return (
@@ -31,7 +32,9 @@ export function FaqSection() {
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <Input readOnly value="contact@aiplaygrounds.com" className="max-w-sm rounded-full" />
               <Button asChild className="rounded-full">
-                <Link href="mailto:contact@aiplaygrounds.com">Contacto</Link>
+                <Link href="mailto:contact@aiplaygrounds.com">
+                  {locale === "en" ? "Contact" : "Contacto"}
+                </Link>
               </Button>
             </div>
           </div>

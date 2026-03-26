@@ -1,0 +1,18 @@
+{
+  "titularLinea1": "Ready to understand",
+  "titularLinea2": "what you build?",
+  "subtitulo": "Join the community redefining how AI is learned in Latin America. Be the first to know when the next cohort opens.",
+  "formulario": {
+    "placeholderEmail": "you@email.com",
+    "boton": "Join the waitlist",
+    "notaPrivacidad": "No spam. Unsubscribe anytime."
+  },
+  "bloqueAlianzas": {
+    "textoEnfasis": "Want to be part of this?",
+    "texto": "We're looking for partners who believe in democratizing AI in LATAM.",
+    "cta": {
+      "texto": "Partnership contact",
+      "mailto": "contact@aiplaygrounds.com"
+    }
+  }
+}

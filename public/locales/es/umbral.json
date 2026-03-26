@@ -1,0 +1,62 @@
+{
+  "etiqueta": "Plataforma",
+  "titulo": "Umbral",
+  "eslogan": "\"Desarrolla. Despliega. Aprende.\"",
+  "descripcionHtml": "Tu centro de control para construir un portafolio técnico real mientras aprendes los fundamentos de IA. Umbral es donde demuestras que no solo <em>generaste</em> — que <strong>construiste con entendimiento</strong>.",
+  "caracteristicas": [
+    {
+      "icono": "🌐",
+      "titulo": "Proyectos desplegados",
+      "descripcion": "Rastrea proyectos con URLs en vivo y métricas reales de uso"
+    },
+    {
+      "icono": "📚",
+      "titulo": "Fundamentos dominados",
+      "descripcion": "Registro de conceptos que aplicaste y puedes explicar"
+    },
+    {
+      "icono": "🔄",
+      "titulo": "Historial de iteraciones",
+      "descripcion": "Cómo evolucionó tu proyecto basado en feedback real"
+    },
+    {
+      "icono": "📝",
+      "titulo": "Documentación de aprendizaje",
+      "descripcion": "Tus conclusiones técnicas de cada sprint"
+    }
+  ],
+  "mockupUi": {
+    "tipo": "browser_chrome_mockup",
+    "urlBarra": "umbral.aiplaygrounds.com",
+    "cabeceraPortafolio": "Mi Portafolio",
+    "cohorte": "Cohorte 2026",
+    "etiquetaFundamentos": "Fundamentos dominados",
+    "proyecto1": {
+      "nombre": "Bot de Soporte con IA",
+      "estado": "En vivo",
+      "etiquetas": [
+        "NLP",
+        "RAG",
+        "FastAPI"
+      ],
+      "porcentaje": "85"
+    },
+    "proyecto2": {
+      "nombre": "Analizador Inteligente de Docs",
+      "estado": "Iterando",
+      "etiquetas": [
+        "Vision",
+        "Embeddings"
+      ],
+      "porcentaje": "60"
+    },
+    "miniEstadisticas": {
+      "etiquetas": [
+        "Desplegados",
+        "Conceptos",
+        "Usuarios"
+      ],
+      "nota": "En la UI actual los números 2, 12, 47 son fijos en el componente."
+    }
+  }
+}

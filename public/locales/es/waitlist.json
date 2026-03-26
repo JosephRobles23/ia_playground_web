@@ -1,0 +1,18 @@
+{
+  "titularLinea1": "¿Listo para Entender",
+  "titularLinea2": "Lo Que Construyes?",
+  "subtitulo": "Únete a la comunidad que está redefiniendo cómo se aprende IA en Latinoamérica. Sé el primero en saber cuando abramos la próxima cohorte.",
+  "formulario": {
+    "placeholderEmail": "tu@email.com",
+    "boton": "Únete a la Lista",
+    "notaPrivacidad": "Sin spam. Cancela cuando quieras."
+  },
+  "bloqueAlianzas": {
+    "textoEnfasis": "¿Quieres ser parte de esto?",
+    "texto": "Buscamos aliados que crean en democratizar la IA en LATAM.",
+    "cta": {
+      "texto": "Contacto para Alianzas",
+      "mailto": "contact@aiplaygrounds.com"
+    }
+  }
+}

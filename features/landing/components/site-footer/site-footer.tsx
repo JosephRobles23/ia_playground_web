@@ -2,11 +2,19 @@ import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import type { Locale } from "@/public/i18n/config"
+import { getSectionContent } from "@/public/i18n/load"
+import { hrefWithLocale } from "@/public/i18n/paths"
 
-import { getSectionContent } from "@/features/landing/content"
+function resolveFooterHref(locale: Locale, href: string) {
+  if (href.startsWith("#")) {
+    return hrefWithLocale(locale, href)
+  }
+  return href
+}
 
-export function SiteFooter() {
-  const c = getSectionContent("footer")
+export function SiteFooter({ locale }: { locale: Locale }) {
+  const c = getSectionContent(locale, "footer")
   if (!c || !("columnas" in c)) return null
 
   const cols = c.columnas as Record<string, { etiqueta: string; href: string }[]>
@@ -38,7 +46,10 @@ export function SiteFooter() {
               <ul className="mt-3 flex flex-col gap-2">
                 {links.map((l: { etiqueta: string; href: string }) => (
                   <li key={l.etiqueta}>
-                    <Link href={l.href} className="text-sm text-muted-foreground hover:text-foreground">
+                    <Link
+                      href={resolveFooterHref(locale, l.href)}
+                      className="text-sm text-muted-foreground hover:text-foreground"
+                    >
                       {l.etiqueta}
                     </Link>
                   </li>

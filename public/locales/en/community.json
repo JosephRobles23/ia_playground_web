@@ -1,0 +1,12 @@
+{
+  "etiqueta": "Join us",
+  "titulo": "Be part of the community",
+  "subtitulo": "Follow us for events, bootcamps, and opportunities in the LATAM AI ecosystem.",
+  "redes": [
+    { "nombre": "LinkedIn", "descripcionCorta": "Professional updates and networking" },
+    { "nombre": "Instagram", "descripcionCorta": "Behind the scenes and visual community" },
+    { "nombre": "Twitter / X", "descripcionCorta": "Latest news and tech community" },
+    { "nombre": "Discord", "descripcionCorta": "Real-time community and support" },
+    { "nombre": "WhatsApp", "descripcionCorta": "Community groups and announcements" }
+  ]
+}

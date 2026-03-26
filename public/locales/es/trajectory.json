@@ -1,0 +1,63 @@
+{
+  "etiqueta": "Resultados",
+  "titulo": "Nuestra Trayectoria 2025",
+  "subtitulo": "En nuestro primer año, ya generamos impacto en toda Latinoamérica.",
+  "estadisticas": [
+    {
+      "valor": "1000",
+      "sufijo": "+",
+      "etiqueta": "Inscritos al Hackathon"
+    },
+    {
+      "valor": "300",
+      "sufijo": "+",
+      "etiqueta": "Participantes del Bootcamp"
+    },
+    {
+      "valor": "16",
+      "sufijo": "",
+      "etiqueta": "Speakers Internacionales"
+    },
+    {
+      "valor": "40",
+      "sufijo": "",
+      "etiqueta": "Becas Completas"
+    }
+  ],
+  "eventosTimeline": [
+    {
+      "titulo": "Bootcamp GenAI Fundamentals",
+      "descripcion": "Bootcamp nacional de fundamentos de IA Generativa. 300+ inscritos, 40 becas completas en Perú y Chile. 16 speakers internacionales.",
+      "etiquetas": [
+        "Bootcamp",
+        "Perú",
+        "Chile"
+      ]
+    },
+    {
+      "titulo": "The Real AI",
+      "descripcion": "Evento para emprendedores: '¿Realmente necesitas IA en tus procesos?' Cortando el hype para identificar necesidades reales.",
+      "etiquetas": [
+        "Emprendedores",
+        "Estrategia"
+      ]
+    },
+    {
+      "titulo": "Colombia Tech Week",
+      "descripcion": "Participación en Tech Fest y Platzi Conf. Staff en el AI Hackathon Colombia. Networking con líderes tech de LATAM.",
+      "etiquetas": [
+        "Colombia",
+        "Networking"
+      ]
+    },
+    {
+      "titulo": "AI Hackathon Peru 2025",
+      "descripcion": "El hackathon de IA más grande del Perú. 1,000+ inscritos, 120 seleccionados. 24 horas construyendo. $1,500 USD en premios.",
+      "etiquetas": [
+        "Principal",
+        "Hackathon",
+        "Perú"
+      ]
+    }
+  ]
+}

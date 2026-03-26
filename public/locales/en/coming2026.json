@@ -1,0 +1,41 @@
+{
+  "etiqueta": "Coming soon",
+  "titulo": "What's coming in 2026",
+  "subtitulo": "We're scaling our mission across Latin America.",
+  "iniciativas": [
+    {
+      "icono": "🌎",
+      "titulo": "Hack@LATAM",
+      "descripcion": "Regional hackathon with communities across Latin America",
+      "categoria": "Hackathon"
+    },
+    {
+      "icono": "📖",
+      "titulo": "Core bootcamps",
+      "descripcion": "AI, GenAI, and Agents fundamentals — deep knowledge tracks",
+      "categoria": "Education"
+    },
+    {
+      "icono": "✈️",
+      "titulo": "DevDay LATAM",
+      "descripcion": "Partnership with Pymut: 6 simultaneous hours in multiple countries. Winners travel to Silicon Valley!",
+      "categoria": "Silicon Valley"
+    },
+    {
+      "icono": "🤝",
+      "titulo": "Regional impact fellowship",
+      "descripcion": "Tech tools and knowledge for every region of Peru",
+      "categoria": "Fellowship"
+    },
+    {
+      "icono": "🏗️",
+      "titulo": "PG incubators",
+      "descripcion": "Top AI TechProducts initiatives connected with partner incubators and accelerators",
+      "categoria": "Incubation"
+    }
+  ],
+  "cta": {
+    "texto": "Keep me updated",
+    "ancla": "#waitlist"
+  }
+}

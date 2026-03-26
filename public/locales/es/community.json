@@ -1,0 +1,27 @@
+{
+  "etiqueta": "Únete",
+  "titulo": "Sé Parte de la Comunidad",
+  "subtitulo": "Síguenos para enterarte de eventos, bootcamps y oportunidades en el ecosistema de IA en LATAM.",
+  "redes": [
+    {
+      "nombre": "LinkedIn",
+      "descripcionCorta": "Actualizaciones profesionales y networking"
+    },
+    {
+      "nombre": "Instagram",
+      "descripcionCorta": "Detrás de escena y comunidad visual"
+    },
+    {
+      "nombre": "Twitter / X",
+      "descripcionCorta": "Últimas novedades y comunidad tech"
+    },
+    {
+      "nombre": "Discord",
+      "descripcionCorta": "Comunidad en tiempo real y soporte"
+    },
+    {
+      "nombre": "WhatsApp",
+      "descripcionCorta": "Grupos de comunidad y avisos"
+    }
+  ]
+}

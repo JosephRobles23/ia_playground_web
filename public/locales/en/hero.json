@@ -1,0 +1,39 @@
+{
+  "badge": "Next cohort: 2026",
+  "titularLinea1": "Understand AI.",
+  "titularLinea2": "Build the Future.",
+  "subtitulo": "Democratizing practical AI knowledge in Latin America. We don't teach you to use tools — we teach you to",
+  "subtituloEnfasis": "understand the technology",
+  "ctaPrincipal": {
+    "texto": "Join the waitlist",
+    "ancla": "#waitlist"
+  },
+  "ctaSecundario": {
+    "texto": "View programs",
+    "ancla": "#program"
+  },
+  "mockupCodigo": {
+    "tipo": "code_snippet",
+    "nombreArchivo": "ai-techproducts.py",
+    "comentarios": [
+      "# Use any AI tool you want",
+      "# But understand what it did",
+      "# ← That's what matters"
+    ]
+  },
+  "pasarelaLogos": {
+    "tipo": "marquee_texto",
+    "etiqueta": "Backed by LATAM tech leaders",
+    "items": [
+      "Looper.ai",
+      "SpinOut",
+      "Globant",
+      "LetyMind",
+      "The Hackathon Company",
+      "Pymut",
+      "UPCH",
+      "Bioincuba",
+      "UTEC Ventures"
+    ]
+  }
+}

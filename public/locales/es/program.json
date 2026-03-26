@@ -1,0 +1,74 @@
+{
+  "etiqueta": "La Solución",
+  "titulo": "AI TechProducts",
+  "cita": "\"Si no puedes explicarlo, no lo construiste — solo lo generaste.\"",
+  "pilares": [
+    {
+      "icono": "🔨",
+      "titulo": "Construye productos reales",
+      "descripcion": "Usa las herramientas que quieras — Claude Code, Cursor, Windsurf, no-code. Lo que importa es el resultado y que lo entiendas."
+    },
+    {
+      "icono": "🧠",
+      "titulo": "Demuestra que entiendes",
+      "descripcion": "Explica qué hizo la IA, por qué funciona y cómo lo modificarías sin empezar de cero."
+    },
+    {
+      "icono": "🚀",
+      "titulo": "Despliega con usuarios reales",
+      "descripcion": "Lanza a usuarios reales que te dan feedback. Itera basándote en uso real, no en hipótesis."
+    }
+  ],
+  "tituloHitos": "Los 4 hitos de cada proyecto",
+  "hitos": [
+    {
+      "numero": "01",
+      "titulo": "Diseño y Arquitectura",
+      "descripcion": "Planifica tu solución y define el enfoque técnico"
+    },
+    {
+      "numero": "02",
+      "titulo": "Desarrollo 1.0",
+      "descripcion": "Construye y despliega tu primera versión funcional"
+    },
+    {
+      "numero": "03",
+      "titulo": "Iteración con Feedback",
+      "descripcion": "Recoge feedback de usuarios reales e itera"
+    },
+    {
+      "numero": "04",
+      "titulo": "Deploy y Pruebas de Usuario",
+      "descripcion": "Despliegue final con aprendizajes documentados"
+    }
+  ],
+  "tituloValidacion": "Cómo validamos el aprendizaje",
+  "preguntasValidacion": [
+    "¿Puedes explicar qué hace cada parte de tu código?",
+    "¿Puedes identificar dónde la IA aplicó ciertos conceptos?",
+    "¿Puedes modificar la solución sin pedirle a la IA que rehaga todo?",
+    "¿Puedes defender tu arquitectura y decisiones técnicas?"
+  ],
+  "metricasEstructura": [
+    {
+      "valor": "3",
+      "etiqueta": "meses por ciclo"
+    },
+    {
+      "valor": "3-4",
+      "etiqueta": "semanas por sprint"
+    },
+    {
+      "valor": "3+",
+      "etiqueta": "productos desplegados"
+    },
+    {
+      "valor": "1-2",
+      "etiqueta": "personas por equipo"
+    }
+  ],
+  "cta": {
+    "texto": "Únete a la Lista de AI TechProducts",
+    "ancla": "#waitlist"
+  }
+}
