@@ -8,6 +8,7 @@ import { getSectionContent } from "@/public/i18n/load"
 import { hrefWithLocale } from "@/public/i18n/paths"
 import { ScrollReveal } from "@/features/landing/components/shared"
 import { WavyBackgroundClient } from "@/features/landing/components/hero/wavy-background-client"
+import Shuffle from "@/components/Shuffle"
 
 export function HeroSection({ locale }: { locale: Locale }) {
   const c = getSectionContent(locale, "hero")
@@ -39,10 +40,27 @@ export function HeroSection({ locale }: { locale: Locale }) {
           <p className="mb-6 text-sm text-muted-foreground">{c.badge}</p>
         </ScrollReveal> */}
 
-        <ScrollReveal variant="fade-up" delay={0.08} duration={0.65}>
-          <h1 className="max-w-3xl text-balance font-medium tracking-tight text-foreground">
-            <span className="block text-4xl leading-[1.1] sm:text-5xl md:text-6xl">{c.titularLinea1}</span>
-            <span className="mt-1 block text-4xl leading-[1.1] sm:text-5xl md:text-6xl">{c.titularLinea2}</span>
+        <ScrollReveal variant="fade-up" delay={0.08} duration={0.85}>
+          <h1 className="max-w-6xl text-balance font-medium tracking-tight text-foreground">
+            <Shuffle
+              tag="span"
+              text={c.titularLinea1}
+              className="block text-4xl leading-[1.1] sm:text-5xl md:text-6xl font-[family-name:var(--font-press-start-2p)] tracking-wide"
+              shuffleDirection="up"
+              duration={1}
+              stagger={0.04}
+              animationMode="evenodd"
+            />
+            <Shuffle
+              tag="span"
+              text={c.titularLinea2}
+              className="mt-[0.9] block text-4xl leading-[1.1] sm:text-5xl md:text-6xl font-[family-name:var(--font-press-start-2p)] tracking-wide"
+              shuffleDirection="up"
+              duration={1}
+              stagger={0.04}
+              maxDelay={0.1}
+              animationMode="evenodd"
+            />
           </h1>
         </ScrollReveal>
 
@@ -54,7 +72,7 @@ export function HeroSection({ locale }: { locale: Locale }) {
         </ScrollReveal>
 
         <ScrollReveal variant="fade-up" delay={0.28} duration={0.5}>
-          <div className="mt-10 flex w-full flex-col items-center justify-center gap-3 sm:flex-row">
+          <div className="mt-10 flex w-full flex-col items-center justify-center gap-3 sm:flex-row z-10">
             <Button
               variant="default"
               size="lg"
@@ -93,7 +111,7 @@ export function HeroSection({ locale }: { locale: Locale }) {
         ensures it never blocks clicks. z-[-1] keeps it behind all content.
       */}
       <div
-        className="pointer-events-none absolute inset-0 z-0 translate-y-[160px]"
+        className="pointer-events-none absolute inset-0 z-0 translate-y-[200px] "
         aria-hidden
       >
         <WavyBackgroundClient />

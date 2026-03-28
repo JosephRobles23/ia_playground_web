@@ -1,2 +1,2 @@
-export { getSectionContent, getSiteContent } from "./i18n/load"
-export type { Locale } from "./i18n/config"
+export { getSectionContent, getSiteContent } from "@/public/i18n/load"
+export type { Locale } from "@/public/i18n/config"

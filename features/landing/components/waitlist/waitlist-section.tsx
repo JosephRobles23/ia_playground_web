@@ -57,11 +57,10 @@ export function WaitlistSection({ locale }: { locale: Locale }) {
               name="email"
               autoComplete="email"
             />
-            <Button type="submit" size="lg" className="h-12 shrink-0 rounded-full px-8">
+            <Button type="submit" size="lg" className="h-12 shrink-0 rounded-full px-8 hover:scale-105 transition-transform duration-300">
               {c.formulario.boton}
             </Button>
           </form>
-          <p className="mt-3 text-xs text-muted-foreground">{c.formulario.notaPrivacidad}</p>
         </ScrollReveal>
 
         {/* <ScrollReveal variant="fade-up" delay={0.25}>

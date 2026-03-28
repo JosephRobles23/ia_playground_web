@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Geist, Geist_Mono, Inter } from "next/font/google"
+import { Geist, Geist_Mono, Inter, Press_Start_2P } from "next/font/google"
 
 import { HtmlLang } from "@/components/html-lang"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -9,6 +9,12 @@ import { cn } from "@/lib/utils"
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
+
+const pressStart2P = Press_Start_2P({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-press-start-2p",
+})
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,6 +31,11 @@ export const metadata: Metadata = {
     default: "AI PlayGrounds",
     template: "%s",
   },
+  icons: {
+    icon: "/images/favicon/favicon_white.png",
+    shortcut: "/images/favicon/favicon_white.png",
+    apple: "/images/favicon/favicon_white.png",
+  },
 }
 
 export default function RootLayout({
@@ -35,7 +46,7 @@ export default function RootLayout({
   return (
     <html
       lang={DEFAULT_LOCALE}
-      className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable)}
+      className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, pressStart2P.variable, "font-sans", inter.variable)}
       suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col" suppressHydrationWarning>
