@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Geist, Geist_Mono, Inter } from "next/font/google"
 
 import { HtmlLang } from "@/components/html-lang"
+import { ThemeProvider } from "@/components/theme-provider"
 import { DEFAULT_LOCALE } from "@/public/i18n/config"
 import { cn } from "@/lib/utils"
 
@@ -35,10 +36,13 @@ export default function RootLayout({
     <html
       lang={DEFAULT_LOCALE}
       className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable)}
+      suppressHydrationWarning
     >
-      <body className="flex min-h-full flex-col">
-        <HtmlLang />
-        {children}
+      <body className="flex min-h-full flex-col" suppressHydrationWarning>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <HtmlLang />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )

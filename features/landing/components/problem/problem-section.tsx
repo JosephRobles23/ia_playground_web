@@ -1,4 +1,4 @@
-import { GlowingCard, HtmlSnippet, SectionKicker } from "@/features/landing/components/shared"
+import { GlowingCard, HtmlSnippet, ScrollReveal, ScrollRevealGroup, SectionKicker } from "@/features/landing/components/shared"
 import type { Locale } from "@/public/i18n/config"
 import { getSectionContent } from "@/public/i18n/load"
 
@@ -9,7 +9,7 @@ export function ProblemSection({ locale }: { locale: Locale }) {
   return (
     <section className="border-y border-border/60 bg-muted/30 px-4 py-16 md:px-6 md:py-24" id="problem">
       <div className="mx-auto max-w-6xl">
-        <div className="mb-12 flex flex-col gap-4 md:mb-16">
+        <ScrollReveal variant="fade-up" className="mb-12 flex flex-col gap-4 md:mb-16">
           <SectionKicker>{c.etiqueta}</SectionKicker>
           <h2 className="max-w-3xl text-balance text-3xl font-medium tracking-tight md:text-4xl">
             {c.tituloLinea1}
@@ -19,9 +19,9 @@ export function ProblemSection({ locale }: { locale: Locale }) {
           <p className="max-w-2xl text-base text-muted-foreground md:text-lg">
             <HtmlSnippet html={c.subtituloHtml} />
           </p>
-        </div>
+        </ScrollReveal>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <ScrollRevealGroup className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" staggerDelay={0.12}>
           {c.pasos.map((paso: { numero: string; titulo: string; descripcion: string }) => (
             <GlowingCard key={paso.numero} innerClassName="p-4">
               <div className="flex gap-4">
@@ -35,13 +35,15 @@ export function ProblemSection({ locale }: { locale: Locale }) {
               </div>
             </GlowingCard>
           ))}
-        </div>
+        </ScrollRevealGroup>
 
-        <blockquote className="mx-auto mt-12 max-w-3xl border-l-4 border-primary/40 pl-6 text-lg italic text-foreground md:text-xl">
-          {c.cita}
-        </blockquote>
+        <ScrollReveal variant="fade-left" delay={0.1}>
+          <blockquote className="mx-auto mt-12 max-w-3xl border-l-4 border-primary/40 pl-6 text-lg italic text-foreground md:text-xl">
+            {c.cita}
+          </blockquote>
+        </ScrollReveal>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-3">
+        <ScrollRevealGroup className="mt-12 grid gap-6 sm:grid-cols-3" staggerDelay={0.1} variant="scale-up">
           {c.estadisticas.map((s: { valor: string; sufijo: string; etiqueta: string }) => (
             <div
               key={s.etiqueta}
@@ -54,7 +56,7 @@ export function ProblemSection({ locale }: { locale: Locale }) {
               <p className="mt-2 text-sm text-muted-foreground">{s.etiqueta}</p>
             </div>
           ))}
-        </div>
+        </ScrollRevealGroup>
       </div>
     </section>
   )

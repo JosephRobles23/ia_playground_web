@@ -8,22 +8,10 @@
     "tipo": "navbar",
     "marca": "AI PlayGrounds",
     "enlaces": [
-      {
-        "texto": "Programa",
-        "ancla": "#program"
-      },
-      {
-        "texto": "Eventos",
-        "ancla": "#events"
-      },
-      {
-        "texto": "Comunidad",
-        "ancla": "#community"
-      },
-      {
-        "texto": "Trayectoria",
-        "ancla": "#trajectory"
-      }
+      { "texto": "Programa", "href": "/program" },
+      { "texto": "Eventos", "href": "/events" },
+      { "texto": "Comunidad", "href": "/community" },
+      { "texto": "Trayectoria", "href": "/#trajectory" }
     ],
     "alternarIdioma": {
       "etiqueta": "EN",

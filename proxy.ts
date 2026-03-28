@@ -7,7 +7,7 @@ function pathnameHasLocale(pathname: string) {
   return LOCALES.some((locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`))
 }
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname
 
   if (pathnameHasLocale(pathname)) {

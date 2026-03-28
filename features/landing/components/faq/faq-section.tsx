@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Separator } from "@/components/ui/separator"
 
-import { SectionKicker } from "@/features/landing/components/shared"
+import { ScrollReveal, SectionKicker } from "@/features/landing/components/shared"
 import type { Locale } from "@/public/i18n/config"
 import { getSectionContent } from "@/public/i18n/load"
 
@@ -23,7 +23,7 @@ export function FaqSection({ locale }: { locale: Locale }) {
   return (
     <section className="border-t border-border bg-background px-4 py-16 md:px-6 md:py-24" id="faq">
       <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-16">
-        <div className="flex flex-col gap-6">
+        <ScrollReveal variant="fade-left" className="flex flex-col gap-6">
           <SectionKicker>{c.etiqueta}</SectionKicker>
           <h2 className="text-balance text-3xl font-medium tracking-tight md:text-4xl">{c.titulo}</h2>
           <Separator />
@@ -38,26 +38,28 @@ export function FaqSection({ locale }: { locale: Locale }) {
               </Button>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
 
-        <Accordion
-          type="single"
-          collapsible
-          className="flex flex-col gap-3 border-0 bg-transparent shadow-none"
-        >
-          {c.items.map((item: { pregunta: string; respuesta: string }, index: number) => (
-            <AccordionItem
-              key={item.pregunta}
-              value={`item-${index}`}
-              className="rounded-2xl border border-border bg-card px-4 shadow-sm"
-            >
-              <AccordionTrigger className="py-4 text-left text-base font-medium hover:no-underline">
-                {item.pregunta}
-              </AccordionTrigger>
-              <AccordionContent className="pb-4 text-sm text-muted-foreground">{item.respuesta}</AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+        <ScrollReveal variant="fade-right" delay={0.1}>
+          <Accordion
+            type="single"
+            collapsible
+            className="flex flex-col gap-3 border-0 bg-transparent shadow-none"
+          >
+            {c.items.map((item: { pregunta: string; respuesta: string }, index: number) => (
+              <AccordionItem
+                key={item.pregunta}
+                value={`item-${index}`}
+                className="rounded-2xl border border-border bg-card px-4 shadow-sm"
+              >
+                <AccordionTrigger className="py-4 text-left text-base font-medium hover:no-underline">
+                  {item.pregunta}
+                </AccordionTrigger>
+                <AccordionContent className="pb-4 text-sm text-muted-foreground">{item.respuesta}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </ScrollReveal>
       </div>
     </section>
   )
