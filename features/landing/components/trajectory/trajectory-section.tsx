@@ -3,6 +3,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/ca
 import { ScrollReveal, ScrollRevealGroup, SectionKicker } from "@/features/landing/components/shared"
 import type { Locale } from "@/public/i18n/config"
 import { getSectionContent } from "@/public/i18n/load"
+import ShinyText from "@/components/ShinyText"
 
 export function TrajectorySection({ locale }: { locale: Locale }) {
   const c = getSectionContent(locale, "trajectory")
@@ -13,7 +14,9 @@ export function TrajectorySection({ locale }: { locale: Locale }) {
       <div className="mx-auto max-w-6xl">
         <ScrollReveal variant="fade-up" className="mb-10 flex flex-col gap-4 md:mb-14">
           <SectionKicker>{c.etiqueta}</SectionKicker>
-          <h2 className="max-w-3xl text-balance text-3xl font-medium tracking-tight md:text-4xl">{c.titulo}</h2>
+          <h2 className="max-w-3xl text-balance text-3xl font-medium tracking-tight md:text-4xl">
+            <ShinyText text={c.titulo} speed={3} />
+          </h2>
           <p className="max-w-2xl text-muted-foreground md:text-lg">{c.subtitulo}</p>
         </ScrollReveal>
 

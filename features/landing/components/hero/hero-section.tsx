@@ -35,7 +35,7 @@ export function HeroSection({ locale }: { locale: Locale }) {
         />
       </div> */}
 
-      <div className="mx-auto flex max-w-4xl flex-col items-center text-center -translate-y-18">
+      <div className="mx-auto flex max-w-4xl flex-col items-center text-center -translate-y-22">
         {/* <ScrollReveal variant="fade-in" duration={0.5}>
           <p className="mb-6 text-sm text-muted-foreground">{c.badge}</p>
         </ScrollReveal> */}

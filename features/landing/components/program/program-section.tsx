@@ -5,6 +5,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/ca
 import { Separator } from "@/components/ui/separator"
 
 import { ScrollReveal, ScrollRevealGroup, SectionKicker } from "@/features/landing/components/shared"
+import ShinyText from "@/components/ShinyText"
 import type { Locale } from "@/public/i18n/config"
 import { getSectionContent } from "@/public/i18n/load"
 import { hrefWithLocale } from "@/public/i18n/paths"
@@ -18,7 +19,9 @@ export function ProgramSection({ locale }: { locale: Locale }) {
       <div className="mx-auto max-w-6xl">
         <ScrollReveal variant="fade-up" className="mb-10 flex flex-col gap-4 md:mb-14">
           <SectionKicker>{c.etiqueta}</SectionKicker>
-          <h2 className="text-balance text-3xl font-medium tracking-tight md:text-4xl">{c.titulo}</h2>
+          <h2 className="text-balance text-3xl font-medium tracking-tight md:text-4xl">
+            <ShinyText text={c.titulo} speed={3} />
+          </h2>
           <p className="max-w-3xl text-lg font-medium italic text-muted-foreground">{c.cita}</p>
         </ScrollReveal>
 

@@ -1,4 +1,5 @@
 import { GlowingCard, HtmlSnippet, ScrollReveal, ScrollRevealGroup, SectionKicker } from "@/features/landing/components/shared"
+import ShinyText from "@/components/ShinyText"
 import type { Locale } from "@/public/i18n/config"
 import { getSectionContent } from "@/public/i18n/load"
 
@@ -12,9 +13,9 @@ export function ProblemSection({ locale }: { locale: Locale }) {
         <ScrollReveal variant="fade-up" className="mb-12 flex flex-col gap-4 md:mb-16">
           <SectionKicker>{c.etiqueta}</SectionKicker>
           <h2 className="max-w-3xl text-balance text-3xl font-medium tracking-tight md:text-4xl">
-            {c.tituloLinea1}
+            <ShinyText text={c.tituloLinea1} speed={3} />
             <br />
-            {c.tituloLinea2}
+            <ShinyText text={c.tituloLinea2} speed={3} delay={0.3} />
           </h2>
           <p className="max-w-2xl text-base text-muted-foreground md:text-lg">
             <HtmlSnippet html={c.subtituloHtml} />

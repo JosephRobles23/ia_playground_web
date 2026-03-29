@@ -13,6 +13,7 @@ import { Input } from "@/components/ui/input"
 import { Separator } from "@/components/ui/separator"
 
 import { ScrollReveal, SectionKicker } from "@/features/landing/components/shared"
+import ShinyText from "@/components/ShinyText"
 import type { Locale } from "@/public/i18n/config"
 import { getSectionContent } from "@/public/i18n/load"
 
@@ -25,7 +26,9 @@ export function FaqSection({ locale }: { locale: Locale }) {
       <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-16">
         <ScrollReveal variant="fade-left" className="flex flex-col gap-6">
           <SectionKicker>{c.etiqueta}</SectionKicker>
-          <h2 className="text-balance text-3xl font-medium tracking-tight md:text-4xl">{c.titulo}</h2>
+          <h2 className="text-balance text-3xl font-medium tracking-tight md:text-4xl">
+            <ShinyText text={c.titulo} speed={3} />
+          </h2>
           <Separator />
           <div className="flex flex-col gap-2">
             <span className="text-xs text-muted-foreground">Email</span>

@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
 import { ScrollReveal } from "@/features/landing/components/shared"
+import ShinyText from "@/components/ShinyText"
 import type { Locale } from "@/public/i18n/config"
 import { getSectionContent } from "@/public/i18n/load"
 
@@ -35,9 +36,9 @@ export function WaitlistSection({ locale }: { locale: Locale }) {
       <div className="mx-auto max-w-3xl text-center">
         <ScrollReveal variant="fade-up">
           <h2 className="text-balance text-3xl font-medium tracking-tight md:text-4xl">
-            {c.titularLinea1}
+            <ShinyText text={c.titularLinea1} speed={3} />
             <br />
-            {c.titularLinea2}
+            <ShinyText text={c.titularLinea2} speed={3} delay={0.3} />
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-muted-foreground md:text-lg">{c.subtitulo}</p>
         </ScrollReveal>
