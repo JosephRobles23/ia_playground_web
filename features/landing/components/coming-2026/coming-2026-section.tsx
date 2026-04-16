@@ -8,8 +8,8 @@ import type { Locale } from "@/public/i18n/config"
 import { getSectionContent } from "@/public/i18n/load"
 import { hrefWithLocale } from "@/public/i18n/paths"
 
-export function Coming2026Section({ locale }: { locale: Locale }) {
-  const c = getSectionContent(locale, "coming2026")
+export async function Coming2026Section({ locale }: { locale: Locale }) {
+  const c = await getSectionContent(locale, "coming2026")
   if (!c || !("iniciativas" in c)) return null
 
   return (

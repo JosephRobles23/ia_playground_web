@@ -10,8 +10,8 @@ import type { Locale } from "@/public/i18n/config"
 import { getSectionContent } from "@/public/i18n/load"
 import { hrefWithLocale } from "@/public/i18n/paths"
 
-export function ProgramSection({ locale }: { locale: Locale }) {
-  const c = getSectionContent(locale, "program")
+export async function ProgramSection({ locale }: { locale: Locale }) {
+  const c = await getSectionContent(locale, "program")
   if (!c || !("pilares" in c)) return null
 
   return (
@@ -57,15 +57,15 @@ export function ProgramSection({ locale }: { locale: Locale }) {
             <div>
               <h3 className="mb-6 text-xl font-medium">{c.tituloValidacion}</h3>
               <ul className="flex flex-col gap-3">
-                {c.preguntasValidacion.map((q: string) => (
+                {c.preguntasValidacion.map((q: { pregunta: string; id?: string }) => (
                   <li
-                    key={q}
+                    key={q.id ?? q.pregunta}
                     className="flex gap-3 rounded-xl border border-border bg-background p-3 text-sm leading-relaxed"
                   >
                     <span className="mt-0.5 text-primary" aria-hidden>
                       ✓
                     </span>
-                    {q}
+                    {q.pregunta}
                   </li>
                 ))}
               </ul>

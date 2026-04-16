@@ -17,7 +17,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale: raw } = await params
   if (!isLocale(raw)) return {}
-  const site = getSiteContent(raw)
+  const site = await getSiteContent(raw)
   return {
     title: site.meta.tituloPagina,
     description: site.meta.descripcion,

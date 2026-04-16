@@ -5,8 +5,8 @@ import type { Locale } from "@/public/i18n/config"
 import { getSectionContent } from "@/public/i18n/load"
 import ShinyText from "@/components/ShinyText"
 
-export function TrajectorySection({ locale }: { locale: Locale }) {
-  const c = getSectionContent(locale, "trajectory")
+export async function TrajectorySection({ locale }: { locale: Locale }) {
+  const c = await getSectionContent(locale, "trajectory")
   if (!c || !("eventosTimeline" in c)) return null
 
   return (
@@ -48,7 +48,7 @@ export function TrajectorySection({ locale }: { locale: Locale }) {
                       <CardHeader className="gap-2">
                         <CardTitle className="text-lg font-medium">{ev.titulo}</CardTitle>
                         <CardDescription className="text-sm leading-relaxed">{ev.descripcion}</CardDescription>
-                        <p className="pt-2 text-xs text-muted-foreground">{ev.etiquetas.join(" · ")}</p>
+                        <p className="pt-2 text-xs text-muted-foreground">{ev.etiquetas.map((t: { etiqueta: string }) => t.etiqueta).join(" · ")}</p>
                       </CardHeader>
                     </Card>
                   </li>

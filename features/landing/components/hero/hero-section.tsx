@@ -10,8 +10,8 @@ import { ScrollReveal } from "@/features/landing/components/shared"
 import { WavyBackgroundClient } from "@/features/landing/components/hero/wavy-background-client"
 import Shuffle from "@/components/Shuffle"
 
-export function HeroSection({ locale }: { locale: Locale }) {
-  const c = getSectionContent(locale, "hero")
+export async function HeroSection({ locale }: { locale: Locale }) {
+  const c = await getSectionContent(locale, "hero")
   if (!c || !("mockupCodigo" in c)) return null
 
   const items = [...c.pasarelaLogos.items, ...c.pasarelaLogos.items]

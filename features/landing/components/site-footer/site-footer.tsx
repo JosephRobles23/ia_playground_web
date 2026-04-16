@@ -14,11 +14,18 @@ function resolveFooterHref(locale: Locale, href: string) {
   return href
 }
 
-export function SiteFooter({ locale }: { locale: Locale }) {
-  const c = getSectionContent(locale, "footer")
+type FooterColumn = {
+  id?: string
+  titulo: string
+  enlaces: { etiqueta: string; href: string; id?: string }[]
+}
+
+export async function SiteFooter({ locale }: { locale: Locale }) {
+  const c = await getSectionContent(locale, "footer")
   if (!c || !("columnas" in c)) return null
 
-  const cols = c.columnas as Record<string, { etiqueta: string; href: string }[]>
+  // columnas is now an array of {titulo, enlaces} from Payload
+  const cols = c.columnas as FooterColumn[]
 
   return (
     <footer className="bg-background px-4 py-12 md:px-6 md:py-16">
@@ -42,12 +49,12 @@ export function SiteFooter({ locale }: { locale: Locale }) {
               <p className="mt-2 text-xs text-muted-foreground">{c.newsletter.texto}</p>
             </div>
 
-            {Object.entries(cols).map(([title, links]: [string, { etiqueta: string; href: string }[]]) => (
-              <div key={title}>
-                <p className="text-sm font-semibold">{title}</p>
+            {cols.map((col: FooterColumn) => (
+              <div key={col.id ?? col.titulo}>
+                <p className="text-sm font-semibold">{col.titulo}</p>
                 <ul className="mt-3 flex flex-col gap-2">
-                  {links.map((l: { etiqueta: string; href: string }) => (
-                    <li key={l.etiqueta}>
+                  {col.enlaces?.map((l) => (
+                    <li key={l.id ?? l.etiqueta}>
                       <Link
                         href={resolveFooterHref(locale, l.href)}
                         className="text-sm text-muted-foreground hover:text-foreground"
@@ -62,21 +69,12 @@ export function SiteFooter({ locale }: { locale: Locale }) {
           </div>
         </ScrollReveal>
 
-        {/* <div className="mt-12 border-t border-border pt-8">
-          <p className="text-center text-sm font-medium text-muted-foreground">{c.etiquetaAliados}</p>
-          <div className="mt-4 flex flex-wrap justify-center gap-x-4 gap-y-2 text-xs text-muted-foreground">
-            {c.aliados.map((a: string) => (
-              <span key={a}>{a}</span>
-            ))}
-          </div>
-        </div> */}
-
         <ScrollReveal variant="fade-in" delay={0.2}>
           <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 text-center text-xs text-muted-foreground sm:flex-row sm:text-left">
             <p>{c.copyright}</p>
             <div className="flex flex-wrap justify-center gap-3">
-              {c.enlacesPieSociales.map((name: string) => (
-                <span key={name}>{name}</span>
+              {c.enlacesPieSociales?.map((item: { nombre: string; id?: string }) => (
+                <span key={item.id ?? item.nombre}>{item.nombre}</span>
               ))}
             </div>
           </div>

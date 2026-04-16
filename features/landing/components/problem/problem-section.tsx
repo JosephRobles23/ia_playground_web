@@ -1,11 +1,11 @@
-import { HtmlSnippet, ScrollReveal, ScrollRevealGroup, SectionKicker } from "@/features/landing/components/shared"
+import { LexicalContent, ScrollReveal, ScrollRevealGroup, SectionKicker } from "@/features/landing/components/shared"
 import ShinyText from "@/components/ShinyText"
 import ScrollStack, { ScrollStackItem } from "@/components/ScrollStack"
 import type { Locale } from "@/public/i18n/config"
 import { getSectionContent } from "@/public/i18n/load"
 
-export function ProblemSection({ locale }: { locale: Locale }) {
-  const c = getSectionContent(locale, "problem")
+export async function ProblemSection({ locale }: { locale: Locale }) {
+  const c = await getSectionContent(locale, "problem")
   if (!c || !("pasos" in c)) return null
 
   return (
@@ -21,7 +21,7 @@ export function ProblemSection({ locale }: { locale: Locale }) {
                 <ShinyText text={c.tituloLinea2} speed={3} delay={0.3} />
               </h2>
               <p className="max-w-md text-base text-muted-foreground md:text-lg leading-relaxed mt-2">
-                <HtmlSnippet html={c.subtituloHtml} />
+                <LexicalContent content={c.subtituloHtml} />
               </p>
             </ScrollReveal>
           </div>

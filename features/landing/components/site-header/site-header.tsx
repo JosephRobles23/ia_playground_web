@@ -7,8 +7,9 @@ import { hrefWithLocale, resolveNavHref } from "@/public/i18n/paths"
 import type { Locale } from "@/public/i18n/config"
 import { ThemeToggle } from "./theme-toggle"
 
-export function SiteHeader({ locale }: { locale: Locale }) {
-  const { navegacion } = getSiteContent(locale)
+export async function SiteHeader({ locale }: { locale: Locale }) {
+  const site = await getSiteContent(locale)
+  const { navegacion } = site
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
