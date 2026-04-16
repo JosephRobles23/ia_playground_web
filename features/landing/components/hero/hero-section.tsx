@@ -14,6 +14,8 @@ export async function HeroSection({ locale }: { locale: Locale }) {
   const c = await getSectionContent(locale, "hero")
   if (!c || !("mockupCodigo" in c)) return null
 
+  // Payload wraps array primitives as objects: [{nombre, id}];
+  // duplicate for infinite marquee effect
   const items = [...c.pasarelaLogos.items, ...c.pasarelaLogos.items]
 
   return (
@@ -126,12 +128,12 @@ export async function HeroSection({ locale }: { locale: Locale }) {
               <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-8 sm:w-12 md:w-16 bg-gradient-to-r from-background to-transparent" />
               <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-8 sm:w-12 md:w-16 bg-gradient-to-l from-background to-transparent" />
               <div className="landing-marquee-track items-center gap-6 sm:gap-10 md:gap-14 opacity-80">
-                {items.map((name, i) => (
+                {items.map((item: { nombre: string; id?: string }, i: number) => (
                   <span
-                    key={`${name}-${i}`}
+                    key={`${i}-${item.id ?? item.nombre}`}
                     className="shrink-0 text-xs sm:text-base md:text-lg lg:text-xl font-medium tracking-tight text-muted-foreground"
                   >
-                    {name}
+                    {item.nombre}
                   </span>
                 ))}
               </div>

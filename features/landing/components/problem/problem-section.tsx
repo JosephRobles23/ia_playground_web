@@ -1,4 +1,4 @@
-import { LexicalContent, ScrollReveal, ScrollRevealGroup, SectionKicker } from "@/features/landing/components/shared"
+import { ScrollReveal, ScrollRevealGroup, SectionKicker } from "@/features/landing/components/shared"
 import ShinyText from "@/components/ShinyText"
 import ScrollStack, { ScrollStackItem } from "@/components/ScrollStack"
 import type { Locale } from "@/public/i18n/config"
@@ -21,7 +21,7 @@ export async function ProblemSection({ locale }: { locale: Locale }) {
                 <ShinyText text={c.tituloLinea2} speed={3} delay={0.3} />
               </h2>
               <p className="max-w-md text-base text-muted-foreground md:text-lg leading-relaxed mt-2">
-                <LexicalContent content={c.subtituloHtml} />
+                {c.subtituloHtml}
               </p>
             </ScrollReveal>
           </div>

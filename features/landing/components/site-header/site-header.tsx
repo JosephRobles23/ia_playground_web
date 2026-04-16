@@ -9,6 +9,19 @@ import { ThemeToggle } from "./theme-toggle"
 
 export async function SiteHeader({ locale }: { locale: Locale }) {
   const site = await getSiteContent(locale)
+
+  // Fallback if Payload data is not yet available (e.g. before first seed)
+  if (!site?.navegacion) {
+    return (
+      <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
+        <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-4 px-4 md:h-16 md:px-6">
+          <span className="font-semibold">AI PlayGrounds</span>
+          <ThemeToggle />
+        </div>
+      </header>
+    )
+  }
+
   const { navegacion } = site
 
   return (

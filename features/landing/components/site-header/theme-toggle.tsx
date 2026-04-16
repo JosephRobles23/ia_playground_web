@@ -10,13 +10,11 @@ export function ThemeToggle() {
   const { theme, setTheme, resolvedTheme } = useTheme()
   const [mounted, setMounted] = React.useState(false)
 
-  // Avoid hydration mismatch
   React.useEffect(() => {
     setMounted(true)
   }, [])
 
   function toggle() {
-    // Cycle: system → light → dark → system ...
     if (theme === "system") {
       setTheme(resolvedTheme === "dark" ? "light" : "dark")
     } else if (theme === "light") {
@@ -26,17 +24,25 @@ export function ThemeToggle() {
     }
   }
 
-  const isDark = resolvedTheme === "dark"
+  // Before mount, render a generic label to avoid hydration mismatch
+  // (server doesn't know the resolved theme)
+  const isDark = mounted ? resolvedTheme === "dark" : false
+  const label = mounted
+    ? isDark
+      ? "Cambiar a tema claro"
+      : "Cambiar a tema oscuro"
+    : "Cambiar tema"
 
   return (
     <Button
       variant="ghost"
       size="icon"
       onClick={toggle}
-      aria-label={isDark ? "Cambiar a tema claro" : "Cambiar a tema oscuro"}
+      aria-label={label}
       className="relative h-8 w-8 shrink-0 overflow-hidden rounded-full"
+      suppressHydrationWarning
     >
-      {/* Sun icon — visible in dark mode, fades and scales out in light */}
+      {/* Sun icon — visible in dark mode */}
       <Sun
         className="absolute h-[1.1rem] w-[1.1rem] transition-all duration-300"
         style={{
@@ -54,7 +60,9 @@ export function ThemeToggle() {
         }}
         aria-hidden
       />
-      <span className="sr-only">{isDark ? "Tema claro" : "Tema oscuro"}</span>
+      <span className="sr-only" suppressHydrationWarning>
+        {label}
+      </span>
     </Button>
   )
 }

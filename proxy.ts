@@ -26,6 +26,15 @@ export function proxy(request: NextRequest) {
     return NextResponse.redirect(new URL(`/${DEFAULT_LOCALE}`, request.url))
   }
 
+  // Payload CMS routes must NOT be prefixed with a locale
+  if (
+    pathname.startsWith("/admin") ||
+    pathname.startsWith("/api/payload") ||
+    pathname.startsWith("/(payload)")
+  ) {
+    return NextResponse.next()
+  }
+
   return NextResponse.redirect(new URL(`/${DEFAULT_LOCALE}${pathname}`, request.url))
 }
 

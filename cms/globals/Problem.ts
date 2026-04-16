@@ -30,10 +30,10 @@ export const ProblemGlobal: GlobalConfig = {
     },
     {
       name: 'subtituloHtml',
-      type: 'richText',
+      type: 'textarea',
       localized: true,
       required: true,
-      admin: { description: 'Subtitle with emphasis (em/strong). Use the rich text editor for formatting.' },
+      admin: { description: 'Subtitle text (supports line breaks). Use the admin to update this copy.' },
     },
     {
       name: 'pasos',

@@ -1,7 +1,8 @@
 import type { Locale } from "./config"
 
 /** Ruta con prefijo de idioma y ancla (ej. `/es#program`). */
-export function hrefWithLocale(locale: Locale, ancla: string) {
+export function hrefWithLocale(locale: Locale, ancla: string | null | undefined) {
+  if (!ancla) return `/${locale}`
   const hash = ancla.startsWith("#") ? ancla : `#${ancla}`
   return `/${locale}${hash}`
 }

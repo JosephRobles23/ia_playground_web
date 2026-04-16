@@ -4,17 +4,15 @@
  * ============================================================
  *
  * Migrates all current i18n JSON data (public/locales/en & es)
- * into Payload CMS globals for both locales.
+ * into Payload CMS globals.
+ *
+ * IMPORTANT: We seed using `locale: 'all'` which means every localized
+ * field must be passed as `{ es: "...", en: "..." }` objects. This is
+ * the ONLY correct way to seed both locales for Payload arrays —
+ * seeding locale-by-locale overwrites array items entirely on the
+ * second pass, wiping the first locale's data.
  *
  * Run with:  pnpm seed
- *
- * What it does:
- *  1. Creates an initial admin user (if none exists)
- *  2. Seeds all 9 globals (site, hero, problem, program, trajectory,
- *     coming2026, faq, waitlist, footer) in both ES and EN
- *  3. Handles the data shape differences between flat JSON and Payload
- *     array format (e.g. enlacesPieSociales, preguntasValidacion, etc.)
- *  4. Converts subtituloHtml (raw HTML string) → Lexical JSON rich text
  * ============================================================
  */
 
@@ -43,220 +41,237 @@ import siteEs from '../../public/locales/es/site.json'
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
+/** Create a bilingual object for a localized field */
+function loc(es: string, en: string) {
+  return { es, en }
+}
+
 /**
- * Converts raw HTML snippets (from subtituloHtml) into Payload's Lexical
- * JSON format. Only supports <em> and <strong> inlines.
+ * Strips simple HTML inline tags (<em>, <strong>) to plain text.
+ * Used since subtituloHtml is now a 'textarea' field in Payload.
  */
-function htmlToLexicalParagraph(html: string) {
-  // Parse simple inline tags into Lexical nodes
-  const nodes: object[] = []
-  // Split by em/strong tags
-  const parts = html.split(/(<em>.*?<\/em>|<strong>.*?<\/strong>)/g)
+function htmlToPlainText(html: string) {
+  return html.replace(/<\/?(?:em|strong)>/g, '')
+}
 
-  for (const part of parts) {
-    if (!part) continue
-    if (part.startsWith('<em>')) {
-      const text = part.replace(/<\/?em>/g, '')
-      nodes.push({ type: 'text', text, format: 2 }) // 2 = italic
-    } else if (part.startsWith('<strong>')) {
-      const text = part.replace(/<\/?strong>/g, '')
-      nodes.push({ type: 'text', text, format: 1 }) // 1 = bold
-    } else {
-      nodes.push({ type: 'text', text: part, format: 0 })
-    }
-  }
+// ── Transform functions (JSON → Payload shape with locale:'all') ─────────
 
+function buildHero() {
   return {
-    root: {
-      type: 'root',
-      format: '',
-      indent: 0,
-      version: 1,
-      children: [
-        {
-          type: 'paragraph',
-          format: '',
-          indent: 0,
-          version: 1,
-          children: nodes,
-          direction: 'ltr',
-          textFormat: 0,
-          textStyle: '',
-        },
-      ],
-      direction: 'ltr',
+    badge: loc(heroEs.badge, heroEn.badge),
+    titularLinea1: loc(heroEs.titularLinea1, heroEn.titularLinea1),
+    titularLinea2: loc(heroEs.titularLinea2, heroEn.titularLinea2),
+    subtitulo: loc(heroEs.subtitulo, heroEn.subtitulo),
+    subtituloEnfasis: loc(heroEs.subtituloEnfasis, heroEn.subtituloEnfasis),
+    ctaPrincipal: {
+      texto: loc(heroEs.ctaPrincipal.texto, heroEn.ctaPrincipal.texto),
+      ancla: heroEs.ctaPrincipal.ancla, // not localized
     },
-  }
-}
-
-/** Wraps a flat string array into Payload array format [{nombre}] */
-function toNombreArray(items: string[]) {
-  return items.map((nombre) => ({ nombre }))
-}
-
-/** Wraps a flat string array into Payload array format [{etiqueta}] */
-function toEtiquetaArray(items: string[]) {
-  return items.map((etiqueta) => ({ etiqueta }))
-}
-
-/** Wraps a flat string array into Payload array format [{pregunta}] */
-function toPreguntaArray(items: string[]) {
-  return items.map((pregunta) => ({ pregunta }))
-}
-
-// ── Transform functions (JSON → Payload shape) ───────────────────────────────
-
-function transformHero(d: typeof heroEs) {
-  return {
-    badge: d.badge,
-    titularLinea1: d.titularLinea1,
-    titularLinea2: d.titularLinea2,
-    subtitulo: d.subtitulo,
-    subtituloEnfasis: d.subtituloEnfasis,
-    ctaPrincipal: d.ctaPrincipal,
-    ctaSecundario: d.ctaSecundario,
+    ctaSecundario: {
+      texto: loc(heroEs.ctaSecundario.texto, heroEn.ctaSecundario.texto),
+      ancla: heroEs.ctaSecundario.ancla,
+    },
     mockupCodigo: {
-      tipo: d.mockupCodigo.tipo,
-      nombreArchivo: d.mockupCodigo.nombreArchivo,
-      comentarios: d.mockupCodigo.comentarios.map((linea) => ({ linea })),
+      tipo: heroEs.mockupCodigo.tipo,
+      nombreArchivo: loc(heroEs.mockupCodigo.nombreArchivo, heroEn.mockupCodigo.nombreArchivo),
+      comentarios: heroEs.mockupCodigo.comentarios.map((linea, i) => ({
+        linea: loc(linea, heroEn.mockupCodigo.comentarios[i] ?? linea),
+      })),
     },
     pasarelaLogos: {
-      tipo: d.pasarelaLogos.tipo,
-      etiqueta: d.pasarelaLogos.etiqueta,
-      items: toNombreArray(d.pasarelaLogos.items),
+      tipo: heroEs.pasarelaLogos.tipo,
+      etiqueta: loc(heroEs.pasarelaLogos.etiqueta, heroEn.pasarelaLogos.etiqueta),
+      items: heroEs.pasarelaLogos.items.map((nombre) => ({ nombre })),
     },
   }
 }
 
-function transformProblem(d: typeof problemEs) {
+function buildProblem() {
   return {
-    etiqueta: d.etiqueta,
-    tituloLinea1: d.tituloLinea1,
-    tituloLinea2: d.tituloLinea2,
-    // Convert HTML string to Lexical JSON for the rich text field
-    subtituloHtml: htmlToLexicalParagraph(d.subtituloHtml),
-    pasos: d.pasos.map((p) => ({
+    etiqueta: loc(problemEs.etiqueta, problemEn.etiqueta),
+    tituloLinea1: loc(problemEs.tituloLinea1, problemEn.tituloLinea1),
+    tituloLinea2: loc(problemEs.tituloLinea2, problemEn.tituloLinea2),
+    subtituloHtml: loc(
+      htmlToPlainText(problemEs.subtituloHtml),
+      htmlToPlainText(problemEn.subtituloHtml)
+    ),
+    pasos: problemEs.pasos.map((p, i) => ({
       numero: p.numero,
-      titulo: p.titulo,
-      descripcion: p.descripcion,
+      titulo: loc(p.titulo, problemEn.pasos[i]?.titulo ?? p.titulo),
+      descripcion: loc(p.descripcion, problemEn.pasos[i]?.descripcion ?? p.descripcion),
     })),
-    cita: d.cita,
-    estadisticas: d.estadisticas.map((s) => ({
+    cita: loc(problemEs.cita, problemEn.cita),
+    estadisticas: problemEs.estadisticas.map((s, i) => ({
       valor: s.valor,
       sufijo: s.sufijo,
-      etiqueta: s.etiqueta,
+      etiqueta: loc(s.etiqueta, problemEn.estadisticas[i]?.etiqueta ?? s.etiqueta),
     })),
   }
 }
 
-function transformProgram(d: typeof programEs) {
+function buildProgram() {
   return {
-    etiqueta: d.etiqueta,
-    titulo: d.titulo,
-    cita: d.cita,
-    pilares: d.pilares.map((p) => ({
+    etiqueta: loc(programEs.etiqueta, programEn.etiqueta),
+    titulo: loc(programEs.titulo, programEn.titulo),
+    cita: loc(programEs.cita, programEn.cita),
+    pilares: programEs.pilares.map((p, i) => ({
       icono: p.icono,
-      titulo: p.titulo,
-      descripcion: p.descripcion,
+      titulo: loc(p.titulo, programEn.pilares[i]?.titulo ?? p.titulo),
+      descripcion: loc(p.descripcion, programEn.pilares[i]?.descripcion ?? p.descripcion),
     })),
-    tituloHitos: d.tituloHitos,
-    hitos: d.hitos.map((h) => ({
+    tituloHitos: loc(programEs.tituloHitos, programEn.tituloHitos),
+    hitos: programEs.hitos.map((h, i) => ({
       numero: h.numero,
-      titulo: h.titulo,
-      descripcion: h.descripcion,
+      titulo: loc(h.titulo, programEn.hitos[i]?.titulo ?? h.titulo),
+      descripcion: loc(h.descripcion, programEn.hitos[i]?.descripcion ?? h.descripcion),
     })),
-    tituloValidacion: d.tituloValidacion,
-    preguntasValidacion: toPreguntaArray(d.preguntasValidacion),
-    metricasEstructura: d.metricasEstructura.map((m) => ({
+    tituloValidacion: loc(programEs.tituloValidacion, programEn.tituloValidacion),
+    preguntasValidacion: programEs.preguntasValidacion.map((q, i) => ({
+      pregunta: loc(q, programEn.preguntasValidacion[i] ?? q),
+    })),
+    metricasEstructura: programEs.metricasEstructura.map((m, i) => ({
       valor: m.valor,
-      etiqueta: m.etiqueta,
+      etiqueta: loc(m.etiqueta, programEn.metricasEstructura[i]?.etiqueta ?? m.etiqueta),
     })),
-    cta: d.cta,
+    cta: {
+      texto: loc(programEs.cta.texto, programEn.cta.texto),
+      ancla: programEs.cta.ancla,
+    },
   }
 }
 
-function transformTrajectory(d: typeof trajectoryEs) {
+function buildTrajectory() {
   return {
-    etiqueta: d.etiqueta,
-    titulo: d.titulo,
-    subtitulo: d.subtitulo,
-    estadisticas: d.estadisticas.map((s) => ({
+    etiqueta: loc(trajectoryEs.etiqueta, trajectoryEn.etiqueta),
+    titulo: loc(trajectoryEs.titulo, trajectoryEn.titulo),
+    subtitulo: loc(trajectoryEs.subtitulo, trajectoryEn.subtitulo),
+    estadisticas: trajectoryEs.estadisticas.map((s, i) => ({
       valor: s.valor,
       sufijo: s.sufijo,
-      etiqueta: s.etiqueta,
+      etiqueta: loc(s.etiqueta, trajectoryEn.estadisticas[i]?.etiqueta ?? s.etiqueta),
     })),
-    eventosTimeline: d.eventosTimeline.map((ev) => ({
-      titulo: ev.titulo,
-      descripcion: ev.descripcion,
-      // etiquetas was string[], now [{etiqueta}]
-      etiquetas: toEtiquetaArray(ev.etiquetas),
-    })),
-  }
-}
-
-function transformComing2026(d: typeof coming2026Es) {
-  return {
-    etiqueta: d.etiqueta,
-    titulo: d.titulo,
-    subtitulo: d.subtitulo,
-    iniciativas: d.iniciativas.map((i) => ({
-      icono: i.icono,
-      titulo: i.titulo,
-      descripcion: i.descripcion,
-      categoria: i.categoria,
-    })),
-    cta: d.cta,
-  }
-}
-
-function transformFaq(d: typeof faqEs) {
-  return {
-    etiqueta: d.etiqueta,
-    titulo: d.titulo,
-    items: d.items.map((item) => ({
-      pregunta: item.pregunta,
-      respuesta: item.respuesta,
+    eventosTimeline: trajectoryEs.eventosTimeline.map((ev, i) => ({
+      titulo: loc(ev.titulo, trajectoryEn.eventosTimeline[i]?.titulo ?? ev.titulo),
+      descripcion: loc(ev.descripcion, trajectoryEn.eventosTimeline[i]?.descripcion ?? ev.descripcion),
+      etiquetas: ev.etiquetas.map((et, j) => ({
+        etiqueta: loc(et, trajectoryEn.eventosTimeline[i]?.etiquetas[j] ?? et),
+      })),
     })),
   }
 }
 
-function transformWaitlist(d: typeof waitlistEs) {
+function buildComing2026() {
   return {
-    titularLinea1: d.titularLinea1,
-    titularLinea2: d.titularLinea2,
-    subtitulo: d.subtitulo,
-    formulario: d.formulario,
-    bloqueAlianzas: d.bloqueAlianzas,
+    etiqueta: loc(coming2026Es.etiqueta, coming2026En.etiqueta),
+    titulo: loc(coming2026Es.titulo, coming2026En.titulo),
+    subtitulo: loc(coming2026Es.subtitulo, coming2026En.subtitulo),
+    iniciativas: coming2026Es.iniciativas.map((ini, i) => ({
+      icono: ini.icono,
+      titulo: loc(ini.titulo, coming2026En.iniciativas[i]?.titulo ?? ini.titulo),
+      descripcion: loc(ini.descripcion, coming2026En.iniciativas[i]?.descripcion ?? ini.descripcion),
+      categoria: loc(ini.categoria, coming2026En.iniciativas[i]?.categoria ?? ini.categoria),
+    })),
+    cta: {
+      texto: loc(coming2026Es.cta.texto, coming2026En.cta.texto),
+      ancla: coming2026Es.cta.ancla,
+    },
   }
 }
 
-function transformFooter(d: typeof footerEs) {
-  // columnas was Record<string, links[]>, now array of {titulo, enlaces}
-  const columnas = Object.entries(d.columnas).map(([titulo, enlaces]) => ({
-    titulo,
-    enlaces,
-  }))
+function buildFaq() {
+  return {
+    etiqueta: loc(faqEs.etiqueta, faqEn.etiqueta),
+    titulo: loc(faqEs.titulo, faqEn.titulo),
+    items: faqEs.items.map((item, i) => ({
+      pregunta: loc(item.pregunta, faqEn.items[i]?.pregunta ?? item.pregunta),
+      respuesta: loc(item.respuesta, faqEn.items[i]?.respuesta ?? item.respuesta),
+    })),
+  }
+}
+
+function buildWaitlist() {
+  return {
+    titularLinea1: loc(waitlistEs.titularLinea1, waitlistEn.titularLinea1),
+    titularLinea2: loc(waitlistEs.titularLinea2, waitlistEn.titularLinea2),
+    subtitulo: loc(waitlistEs.subtitulo, waitlistEn.subtitulo),
+    formulario: {
+      placeholderEmail: loc(waitlistEs.formulario.placeholderEmail, waitlistEn.formulario.placeholderEmail),
+      boton: loc(waitlistEs.formulario.boton, waitlistEn.formulario.boton),
+      notaPrivacidad: loc(
+        waitlistEs.formulario.notaPrivacidad ?? '',
+        waitlistEn.formulario.notaPrivacidad ?? ''
+      ),
+    },
+    bloqueAlianzas: {
+      textoEnfasis: loc(
+        waitlistEs.bloqueAlianzas.textoEnfasis ?? '',
+        waitlistEn.bloqueAlianzas.textoEnfasis ?? ''
+      ),
+      texto: loc(
+        waitlistEs.bloqueAlianzas.texto ?? '',
+        waitlistEn.bloqueAlianzas.texto ?? ''
+      ),
+      cta: {
+        texto: loc(
+          waitlistEs.bloqueAlianzas.cta.texto,
+          waitlistEn.bloqueAlianzas.cta.texto
+        ),
+        mailto: waitlistEs.bloqueAlianzas.cta.mailto,
+      },
+    },
+  }
+}
+
+function buildFooter() {
+  const esEntries = Object.entries(footerEs.columnas)
+  const enEntries = Object.entries(footerEn.columnas)
+
+  const columnas = esEntries.map(([tituloEs, enlacesEs], colIndex) => {
+    const [tituloEn, enlacesEn] = enEntries[colIndex] ?? [tituloEs, enlacesEs]
+    return {
+      titulo: loc(tituloEs, tituloEn),
+      enlaces: (enlacesEs as any[]).map((link, linkIdx) => ({
+        etiqueta: loc(link.etiqueta, (enlacesEn as any[])?.[linkIdx]?.etiqueta ?? link.etiqueta),
+        href: link.href,
+      })),
+    }
+  })
 
   return {
-    eslogan: d.eslogan,
-    newsletter: d.newsletter,
+    eslogan: loc(footerEs.eslogan, footerEn.eslogan),
+    newsletter: {
+      texto: loc(footerEs.newsletter.texto, footerEn.newsletter.texto),
+      placeholderEmail: loc(footerEs.newsletter.placeholderEmail, footerEn.newsletter.placeholderEmail),
+      boton: loc(footerEs.newsletter.boton, footerEn.newsletter.boton),
+    },
     columnas,
-    etiquetaAliados: d.etiquetaAliados,
-    aliados: toNombreArray(d.aliados),
-    copyright: d.copyright,
-    // enlacesPieSociales was string[], now [{nombre}]
-    enlacesPieSociales: toNombreArray(d.enlacesPieSociales),
+    etiquetaAliados: loc(footerEs.etiquetaAliados, footerEn.etiquetaAliados),
+    aliados: footerEs.aliados.map((nombre: string) => ({ nombre })),
+    copyright: loc(footerEs.copyright, footerEn.copyright),
+    enlacesPieSociales: footerEs.enlacesPieSociales.map((nombre: string) => ({ nombre })),
   }
 }
 
-function transformSite(d: typeof siteEs) {
+function buildSite() {
   return {
-    meta: d.meta,
+    meta: {
+      tituloPagina: loc(siteEs.meta.tituloPagina, siteEn.meta.tituloPagina),
+      descripcion: loc(siteEs.meta.descripcion, siteEn.meta.descripcion),
+    },
     navegacion: {
-      marca: d.navegacion.marca,
-      enlaces: d.navegacion.enlaces,
-      alternarIdioma: d.navegacion.alternarIdioma,
-      cta: d.navegacion.cta,
+      marca: siteEs.navegacion.marca,
+      enlaces: siteEs.navegacion.enlaces.map((e, i) => ({
+        texto: loc(e.texto, siteEn.navegacion.enlaces[i]?.texto ?? e.texto),
+        href: e.href,
+      })),
+      alternarIdioma: {
+        etiqueta: loc(siteEs.navegacion.alternarIdioma.etiqueta, siteEn.navegacion.alternarIdioma.etiqueta),
+        ruta: loc(siteEs.navegacion.alternarIdioma.ruta, siteEn.navegacion.alternarIdioma.ruta),
+      },
+      cta: {
+        texto: loc(siteEs.navegacion.cta.texto, siteEn.navegacion.cta.texto),
+        ancla: siteEs.navegacion.cta.ancla,
+      },
     },
   }
 }
@@ -286,35 +301,31 @@ async function seed() {
     payload.logger.info('   Admin user already exists, skipping.')
   }
 
-  // ── 2. Seed globals ────────────────────────────────────────────────────────
+  // ── 2. Seed globals using locale: 'all' ────────────────────────────────────
+  // This is critical: using 'all' means every localized field is passed as
+  // { es: "...", en: "..." }. This prevents arrays from being overwritten
+  // when seeding the second locale.
   const globals = [
-    { slug: 'site',        es: transformSite(siteEs),            en: transformSite(siteEn) },
-    { slug: 'hero',        es: transformHero(heroEs),            en: transformHero(heroEn) },
-    { slug: 'problem',     es: transformProblem(problemEs),      en: transformProblem(problemEn) },
-    { slug: 'program',     es: transformProgram(programEs),      en: transformProgram(programEn) },
-    { slug: 'trajectory',  es: transformTrajectory(trajectoryEs), en: transformTrajectory(trajectoryEn) },
-    { slug: 'coming2026',  es: transformComing2026(coming2026Es), en: transformComing2026(coming2026En) },
-    { slug: 'faq',         es: transformFaq(faqEs),              en: transformFaq(faqEn) },
-    { slug: 'waitlist',    es: transformWaitlist(waitlistEs),    en: transformWaitlist(waitlistEn) },
-    { slug: 'footer',      es: transformFooter(footerEs),        en: transformFooter(footerEn) },
+    { slug: 'site',       data: buildSite() },
+    { slug: 'hero',       data: buildHero() },
+    { slug: 'problem',    data: buildProblem() },
+    { slug: 'program',    data: buildProgram() },
+    { slug: 'trajectory', data: buildTrajectory() },
+    { slug: 'coming2026', data: buildComing2026() },
+    { slug: 'faq',        data: buildFaq() },
+    { slug: 'waitlist',   data: buildWaitlist() },
+    { slug: 'footer',     data: buildFooter() },
   ] as const
 
   for (const g of globals) {
-    payload.logger.info(`\nSeeding global: ${g.slug}`)
+    payload.logger.info(`Seeding global: ${g.slug}`)
 
     await payload.updateGlobal({
       slug: g.slug as any,
-      locale: 'es',
-      data: g.es as any,
+      locale: 'all',
+      data: g.data as any,
     })
-    payload.logger.info(`  ✅ [es] ${g.slug}`)
-
-    await payload.updateGlobal({
-      slug: g.slug as any,
-      locale: 'en',
-      data: g.en as any,
-    })
-    payload.logger.info(`  ✅ [en] ${g.slug}`)
+    payload.logger.info(`  ✅ ${g.slug} (es + en)`)
   }
 
   payload.logger.info('\n🎉 Seed complete! All globals seeded in ES and EN.')
